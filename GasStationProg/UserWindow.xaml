@@ -36,24 +36,24 @@
 
             </Button>
 
-            <Button x:Name="ShopItemsGridButton" Grid.Row="2"
-                    Content="{DynamicResource shopButton}"
-                    Style="{DynamicResource menuButtons}" 
-                    Click="ShopItemsGridButton_Click">
-
-            </Button>
-
-            <Button x:Name="ReviewsGridButton" Grid.Row="3"
+            <Button x:Name="ReviewsGridButton" Grid.Row="2"
                     Content="{DynamicResource reviews}"
                     Style="{DynamicResource menuButtons}" 
                     Click="ReviewsGridButton_Click">
 
             </Button>
 
-            <Button x:Name="OrdersGridButton" Grid.Row="4"
+            <Button x:Name="OrdersGridButton" Grid.Row="3"
                     Content="{DynamicResource ordersButton}"
                     Style="{DynamicResource menuButtons}" 
                     Click="OrdersGridButton_Click">
+
+            </Button>
+
+            <Button x:Name="OrdersHistButton" Grid.Row="4"
+                    Content="История заказов"
+                    Style="{DynamicResource menuButtons}" 
+                    Click="OrdersHistButton_Click">
 
             </Button>
 

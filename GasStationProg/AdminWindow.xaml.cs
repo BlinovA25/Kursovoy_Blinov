@@ -43,11 +43,6 @@ namespace GasStationProg
             AdminWinFrame.Content = new AdminFuelPage();
         }
 
-        private void ShopItemsGridButton_Click(object sender, RoutedEventArgs e)
-        {
-            AdminWinFrame.Content = new AdminShopPage();
-        }
-
         private void OrdersGridButton_Click(object sender, RoutedEventArgs e)
         {
 

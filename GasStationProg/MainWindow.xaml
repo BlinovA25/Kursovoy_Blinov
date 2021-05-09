@@ -92,7 +92,11 @@
                     <TextBlock Text="{DynamicResource registr}"></TextBlock>
                 </Hyperlink>
             </TextBlock>
+            
         </Grid>
+
+        <TextBlock x:Name="errorTextBlock" Grid.Column="1" 
+                   Grid.Row="4" Margin="5"> </TextBlock>
 
         <Button x:Name="setButton" Click="setButton_Click" 
                 Grid.Column="1" Grid.Row="5" 

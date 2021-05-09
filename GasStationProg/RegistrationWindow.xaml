@@ -43,21 +43,21 @@
 
             <TextBox Grid.Row="4" FontSize="22"></TextBox>
 
-            <Grid Grid.Row="5">
+            <!--<Grid Grid.Row="5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*"></ColumnDefinition>
                     <ColumnDefinition Width="2*"></ColumnDefinition>
                     <ColumnDefinition Width="4*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 
-                <RadioButton x:Name="admCheck" Grid.Column="0" FontSize="18">Admin</RadioButton>
+                <RadioButton x:Name="admCheck" Grid.Column="0" FontSize="18" HorizontalAlignment="Right" Width="144">Admin</RadioButton>
                 <RadioButton x:Name="userCheck" Grid.Column="1" FontSize="18">User</RadioButton>
-            </Grid>
+            </Grid>-->
 
-            <Label Grid.Row="6" Content="{DynamicResource email}" 
+            <Label Grid.Row="5" Content="{DynamicResource email}" 
                    FontSize="22" ></Label>
 
-            <TextBox Grid.Row="7" FontSize="22"></TextBox>
+            <TextBox Grid.Row="6" FontSize="22"></TextBox>
 
             <Grid Grid.Row="8">
                 <Grid.ColumnDefinitions>

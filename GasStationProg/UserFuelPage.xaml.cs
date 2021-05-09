@@ -16,53 +16,32 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
 namespace GasStationProg
 {
     /// <summary>
-    /// Логика взаимодействия для AdminFuelPage.xaml
+    /// Логика взаимодействия для UserFuelPage.xaml
     /// </summary>
-    public partial class AdminFuelPage : Page
+    public partial class UserFuelPage : Page
     {
         string connectionString;
         SqlDataAdapter adapter;
         DataTable fuelTable;
 
-        public AdminFuelPage()
+        public UserFuelPage()
         {
             InitializeComponent();
             connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+
+            downloadDB();
         }
 
-        private void UpdateDB()
-        {
-            SqlCommandBuilder comandbuilder = new SqlCommandBuilder(adapter);
-            adapter.Update(fuelTable);
-        }
+        //private void UpdateDB()
+        //{
+        //    SqlCommandBuilder comandbuilder = new SqlCommandBuilder(adapter);
+        //    adapter.Update(fuelTable);
+        //}
 
-        private void updateButton_Click(object sender, RoutedEventArgs e)
-        {
-            UpdateDB();
-        }
-
-        private void deleteButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (fuelGrid.SelectedItems != null)
-            {
-                for (int i = 0; i < fuelGrid.SelectedItems.Count; i++)
-                {
-                    DataRowView datarowView = fuelGrid.SelectedItems[i] as DataRowView;
-                    if (datarowView != null)
-                    {
-                        DataRow dataRow = (DataRow)datarowView.Row;
-                        dataRow.Delete();
-                    }
-                }
-            }
-            UpdateDB();
-        }
-
-        private void downloadButton_Click(object sender, RoutedEventArgs e)
+        private void downloadDB()
         {
             string sql = "select * from FUEL;";
             fuelTable = new DataTable();
@@ -88,6 +67,11 @@ namespace GasStationProg
                 if (connection != null)
                     connection.Close();
             }
+        }
+
+        private void chooseButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Товар выбран!");
         }
     }
 }

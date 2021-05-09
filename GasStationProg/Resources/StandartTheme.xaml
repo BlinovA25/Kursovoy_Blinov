@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:GasStationProg.Resources">
+    
 
     <Cursor x:Key="UserCursor">
         F:\OOP\GasStationProg_1\GasStationProg_1\Pist.cur

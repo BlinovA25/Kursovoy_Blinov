@@ -26,12 +26,7 @@ namespace GasStationProg
 
         private void FuelGridButton_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void ShopItemsGridButton_Click(object sender, RoutedEventArgs e)
-        {
-
+            UserWinFrame.Content = new UserFuelPage();
         }
 
         private void OrdersGridButton_Click(object sender, RoutedEventArgs e)
@@ -44,6 +39,13 @@ namespace GasStationProg
             UserWinFrame.Content = new ReviewPage();
         }
 
+        private void OrdersHistButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
+        //кнопки вспомогательного меню
         private void changeUserButton_Click(object sender, RoutedEventArgs e)
         {
 
@@ -53,5 +55,7 @@ namespace GasStationProg
         {
 
         }
+
+        
     }
 }

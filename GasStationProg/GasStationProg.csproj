@@ -88,8 +88,8 @@
     <Compile Include="AdminFuelPage.xaml.cs">
       <DependentUpon>AdminFuelPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AdminShopPage.xaml.cs">
-      <DependentUpon>AdminShopPage.xaml</DependentUpon>
+    <Compile Include="AdminOrdersPage.xaml.cs">
+      <DependentUpon>AdminOrdersPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
@@ -103,6 +103,9 @@
     <Compile Include="SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserFuelPage.xaml.cs">
+      <DependentUpon>UserFuelPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserWindow.xaml.cs">
       <DependentUpon>UserWindow.xaml</DependentUpon>
     </Compile>
@@ -110,7 +113,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AdminShopPage.xaml">
+    <Page Include="AdminOrdersPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -151,6 +154,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserFuelPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,11 +23,16 @@ namespace GasStationProg
     /// </summary>
     public partial class MainWindow : Window
     {
+        string connectionString;
+        SqlDataAdapter adapter;
+        DataTable usersTable;
+
         public MainWindow()
         {
             InitializeComponent();
-
-            //подключаем тему приложения
+            connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+           
+        //подключаем тему приложения
             string theme = null;
             theme = "Resources/StandartTheme";
             var uri = new Uri(theme + ".xaml", UriKind.Relative);
@@ -32,35 +40,39 @@ namespace GasStationProg
             Application.Current.Resources.MergedDictionaries.Add(resourceDictionary);
         }
 
-        private void enterButton_Click(object sender, RoutedEventArgs e)
-        {
-            string login = loginTB.Text.Trim();
-            string pass = passwordTB.Text.Trim();
+        //private void enterButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    string login = loginTB.Text.Trim();
+        //    string pass = passwordTB.Text.Trim();
 
-            if (pass.Length < 6)
-            {
-                //passwordTB.ToolTip = "Неверный пароль";
-                passwordTB.Background = Brushes.DarkRed;
-            }
-            else 
-            { 
-                passwordTB.Background = Brushes.Transparent;
+        //    if (pass.Length < 6)
+        //    {
+        //        //passwordTB.ToolTip = "Неверный пароль";
+        //        passwordTB.Background = Brushes.DarkRed;
+        //    }
+        //    else 
+        //    { 
+        //        passwordTB.Background = Brushes.Transparent;
 
-                /*
-                User authUser = null;
-                using (ApplicationContext DB = new ApplicationContext) 
-                {
-                    authUser = DB.Users.Where(u => u.login == login && u.password == pass).FirstOrDefault();
-                }
-                if (authUser != null)
-                {
 
-                }
-                else 
-                { MessageBox.Show("Такого пользователя не существует!"); }
-                */
-            }
-        }
+        //        //User authUser = null;
+        //        //using (ApplicationContext DB = new ApplicationContext) 
+        //        //{
+        //        //    authUser = DB.Users.Where(u => u.login == login && u.password == pass).FirstOrDefault();
+        //        //}
+        //        //if (authUser != null)
+        //        //{
+        //        //    this.DialogResult = true;
+        //        //}
+        //        //else 
+        //        //{ 
+        //        //    this.DialogResult = false;
+        //        //    errorTextBlock.Text = "Такого пользователя не существует!";
+        //        //    //MessageBox.Show(); 
+        //        //}
+
+        //    }
+
 
         private void Hyperlink_Click(object sender, RoutedEventArgs e)
         {
@@ -73,6 +85,11 @@ namespace GasStationProg
         {
             SettingsWindow SW = new SettingsWindow();
             SW.ShowDialog();
+        }
+
+        private void enterButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
