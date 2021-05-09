@@ -30,7 +30,7 @@ namespace GasStationProg
         public MainWindow()
         {
             InitializeComponent();
-            connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
            
         //подключаем тему приложения
             string theme = null;

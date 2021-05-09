@@ -31,7 +31,7 @@ namespace GasStationProg
         public AdminFuelPage()
         {
             InitializeComponent();
-            connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
         }
 
         private void UpdateDB()

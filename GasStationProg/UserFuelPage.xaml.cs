@@ -30,7 +30,7 @@ namespace GasStationProg
         public UserFuelPage()
         {
             InitializeComponent();
-            connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
 
             downloadDB();
         }

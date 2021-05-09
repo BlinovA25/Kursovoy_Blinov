@@ -29,6 +29,16 @@
     <!-- страницы отзывов -->
     <v:String x:Key="username">Имя пользователя</v:String>
     <v:String x:Key="email">E-mail</v:String>
+    <!-- страница заказов -->
+    <v:String x:Key="idOrder">№</v:String>
+    <v:String x:Key="idFuel">Топливо</v:String>
+    <v:String x:Key="idUser">ID клиента</v:String>
+    <v:String x:Key="OrderDate">Дата заказа</v:String>
+    <v:String x:Key="OrderSum">Сумма</v:String>
+    <v:String x:Key="Status">Статус</v:String>
+    <v:String x:Key="quantity">Количество</v:String>
+    <v:String x:Key="ComplDate">Дата выдачи</v:String>
+    
     
     
     

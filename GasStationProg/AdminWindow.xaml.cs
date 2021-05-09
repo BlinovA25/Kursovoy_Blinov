@@ -45,7 +45,7 @@ namespace GasStationProg
 
         private void OrdersGridButton_Click(object sender, RoutedEventArgs e)
         {
-
+            AdminWinFrame.Content = new AdminOrdersPage();
         }
 
         

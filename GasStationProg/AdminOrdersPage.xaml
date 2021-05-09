@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GasStationProg"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="900"
       Title="AdminOrdersPage">
 
     <Grid  Background="Lavender">
@@ -17,9 +17,14 @@
         <Grid Grid.Row="0" Margin="10, 10, 10, 0">
             <DataGrid x:Name="fuelGrid" IsReadOnly="False" AutoGenerateColumns="False" FontSize="15" Margin="5,5,5,5">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding FuelID}" Header="{DynamicResource ID}" Width="50"/>
-                    <DataGridTextColumn Binding="{Binding FuelName}" Header="{DynamicResource name}" Width="150"/>
-                    <DataGridTextColumn Binding="{Binding FuelCost}" Header="{DynamicResource price}" Width="100"/>
+                    <DataGridTextColumn Binding="{Binding idOrder}" Header="{DynamicResource idOrder}" Width="50"/>
+                    <DataGridTextColumn Binding="{Binding UserName}" Header="{DynamicResource username}" Width="165"/>
+                    <DataGridTextColumn Binding="{Binding OrderDate}" Header="{DynamicResource OrderDate}" Width="115"/>
+                    <DataGridTextColumn Binding="{Binding idFuel}" Header="{DynamicResource idFuel}" Width="95"/>
+                    <DataGridTextColumn Binding="{Binding NumOfL}" Header="{DynamicResource quantity}" Width="115"/>
+                    <DataGridTextColumn Binding="{Binding OrderSum}" Header="{DynamicResource OrderSum}" Width="80"/>
+                    <DataGridTextColumn Binding="{Binding ComplDate}" Header="{DynamicResource ComplDate}" Width="125"/>
+                    <DataGridTextColumn Binding="{Binding OrderStatus}" Header="{DynamicResource Status}" Width="80"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
@@ -28,13 +33,13 @@
             <StackPanel HorizontalAlignment="Center"  Grid.Row="1" 
                         Orientation="Horizontal">
 
-                <Button x:Name="updateButton" Content="{DynamicResource refresh}" 
+                <!--<Button x:Name="updateButton" Content="{DynamicResource refresh}" 
                         Click="updateButton_Click" Margin="0, 5, 10, 5"
-                        Height="auto" Width="130" FontSize="18"/>
+                        Height="auto" Width="130" FontSize="18"/>-->
 
 
-                <Button x:Name="deleteButton" Content="{DynamicResource delete}"
-                        Click="deleteButton_Click" Margin="0, 5, 10, 5"
+                <Button x:Name="readyButton" Content="Готов"
+                        Click="readyButton_Click" Margin="0, 5, 10, 5"
                         Height="auto" Width="130" FontSize="18"/>
 
 
