@@ -58,11 +58,12 @@ namespace GasStationProg
 
                 DB = new UserContext();
 
+
                 USERS authUser = null;
-                //using (ApplicationContext DB = new ApplicationContext)
-                //{
-                    authUser = DB.Users.Where(u => u.UserName == login && u.UserPass == pass).FirstOrDefault();
-                //}
+                authUser = DB.Users.Where(u => u.UserName == login && u.UserPass == pass).FirstOrDefault();
+
+
+
                 if (authUser != null)
                 {
                     //this.DialogResult = true;

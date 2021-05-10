@@ -31,22 +31,23 @@ namespace GasStationProg
         {
             InitializeComponent();
 
-            try
-            {
+            //try
+            //{
                 db = new FuelContext();
 
-                db.Fuel.Load(); // загружаем данные //возникает ошибка!!!
-                fuelGrid.ItemsSource = db.Fuel.Local.ToBindingList();
+                db.fuels.Load(); // загружаем данные //возникает ошибка!!!
+                fuelGrid.ItemsSource = db.fuels.Local.ToBindingList();
+
                 //db.Dispose();
-            }
-            catch
-            { MessageBox.Show("Ошибка загрузки данных из БД!!!"); }
+            //}
+            //catch
+            //{ MessageBox.Show("Ошибка загрузки данных из БД!!!"); }
 
         }
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
-            //db.SaveChanges();
+            db.SaveChanges();
         }
 
         private void deleteButton_Click(object sender, RoutedEventArgs e)
@@ -58,16 +59,16 @@ namespace GasStationProg
                     FUEL fuel = fuelGrid.SelectedItems[i] as FUEL;
                     if (fuel != null)
                     {
-                        //db.Fuel.Remove(fuel);
+                        db.fuels.Remove(fuel);
                     }
                 }
             }
-            //db.SaveChanges();
+            db.SaveChanges();
         }
 
         private void AdminFuelPage_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            //db.Dispose();
+            db.Dispose();
         }
 
 

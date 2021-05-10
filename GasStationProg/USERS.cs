@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,10 @@ namespace GasStationProg
     {
         public UserContext() : base("DbConnection")
         { }
-        public DbSet<USERS> AdminOrders { get; set; }
+        public DbSet<USERS> Users { get; set; }
     }
 
+    [Table("USERS")]
     class USERS
     {
         [Key]

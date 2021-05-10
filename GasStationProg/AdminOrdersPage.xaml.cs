@@ -22,6 +22,10 @@ namespace GasStationProg
     /// <summary>
     /// Логика взаимодействия для AdminOrdersPage.xaml
     /// </summary>
+    /// 
+
+
+
     public partial class AdminOrdersPage : Page
     {
         //string connectionString;
@@ -33,18 +37,22 @@ namespace GasStationProg
         {
             InitializeComponent();
 
-            //try
-            //{
+            try
+            {
                 db = new OrderContext();
 
-                db.AdminOrders.Load(); // загружаем данные //возникает ошибка!!!
-                orderGrid.ItemsSource = db.AdminOrders.Local.ToBindingList();
-                
-            
+                //ORDERS ord = null;
+                //ord = db.Orders.Where(o => o.OrderStatus == 0).SelectMany<ORDERS>;
+
+                //var query = db.Orders.Where(u => u.OrderStatus > 0).OrderBy(u => u.idOrder);
+                db.Orders.Where(u => u.OrderStatus == 0).Load(); // загружаем данные //возникает ошибка!!!
+                orderGrid.ItemsSource = db.Orders.Local.ToBindingList();
+
+
                 ////db.Dispose();
-            //}
-            //catch
-            //{ MessageBox.Show("Ошибка загрузки данных из БД!!!"); }
+            }
+            catch
+            { MessageBox.Show("Ошибка загрузки данных из БД!!!"); }
         }
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
@@ -61,7 +69,7 @@ namespace GasStationProg
                     ORDERS order = orderGrid.SelectedItems[i] as ORDERS;
                     if (order != null)
                     {
-                        db.AdminOrders.Remove(order);
+                        db.Orders.Remove(order);
                     }
                 }
             }

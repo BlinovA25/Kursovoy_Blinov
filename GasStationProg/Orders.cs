@@ -58,7 +58,7 @@ namespace GasStationProg
     {
         public OrderContext() : base("DbConnection")
         { }
-        public DbSet<ORDERS> AdminOrders { get; set; }
+        public DbSet<ORDERS> Orders { get; set; }
     }
 
     [Table("ORDERS")]
@@ -70,13 +70,13 @@ namespace GasStationProg
         public decimal OrderSum { get; set; }
 
         public int UserID { get; set; }
-        [ForeignKey("UserID")]
+        //[ForeignKey("UserID")]
         //public USERS users { get; set; }
 
 
         public int FuelID { get; set; }
-        [ForeignKey("FuelID")]
-        public FUEL fuel { get; set; }
+        //[ForeignKey("FuelID")]
+        //public FUEL fuel { get; set; }
 
         public int OrderStatus { get; set; }
 

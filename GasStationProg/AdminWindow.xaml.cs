@@ -17,6 +17,8 @@ namespace GasStationProg
     /// <summary>
     /// Логика взаимодействия для AdminWindow.xaml
     /// </summary>
+    /// 
+
     public partial class AdminWindow : Window
     {
         public AdminWindow()
@@ -52,7 +54,7 @@ namespace GasStationProg
 
         private void histButton_Click(object sender, RoutedEventArgs e)
         {
-            AdminWinFrame.Content = new AdminOrdersPage();
+            AdminWinFrame.Content = new AdminHistPage();
         }
     }
 }
