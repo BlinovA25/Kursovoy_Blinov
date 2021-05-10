@@ -115,11 +115,18 @@
     <Compile Include="ReviewPage.xaml.cs">
       <DependentUpon>ReviewPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="REVIEWS.cs" />
     <Compile Include="SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserFuelPage.xaml.cs">
       <DependentUpon>UserFuelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserHistPage.xaml.cs">
+      <DependentUpon>UserHistPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserOrdersPage.xaml.cs">
+      <DependentUpon>UserOrdersPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="USERS.cs" />
     <Compile Include="UserWindow.xaml.cs">
@@ -178,6 +185,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserFuelPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserHistPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserOrdersPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

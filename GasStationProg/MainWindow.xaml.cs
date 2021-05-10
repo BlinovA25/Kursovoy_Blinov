@@ -24,15 +24,15 @@ namespace GasStationProg
     public partial class MainWindow : Window
     {
         string connectionString;
-        SqlDataAdapter adapter;
-        DataTable usersTable;
+        //SqlDataAdapter adapter;
+        //DataTable usersTable;
 
         public MainWindow()
         {
             InitializeComponent();
             connectionString = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
            
-        //подключаем тему приложения
+            //подключаем тему приложения
             string theme = null;
             theme = "Resources/StandartTheme";
             var uri = new Uri(theme + ".xaml", UriKind.Relative);
@@ -57,12 +57,8 @@ namespace GasStationProg
                 passwordTB.Background = Brushes.Transparent;
 
                 DB = new UserContext();
-
-
                 USERS authUser = null;
                 authUser = DB.Users.Where(u => u.UserName == login && u.UserPass == pass).FirstOrDefault();
-
-
 
                 if (authUser != null)
                 {
@@ -71,23 +67,28 @@ namespace GasStationProg
                     {
                         AdminWindow AW = new AdminWindow();
                         AW.ShowDialog();
+                        
+                        //this.Close();
                     }
                     else
                     {
-                        UserWindow UW = new UserWindow();
+                        UserWindow UW = new UserWindow();// 
+                        //mainWindow = new MainMainWindow();
+                        UW.UN = login;
+                        UW.UID = authUser.UserID;
                         UW.ShowDialog();
+
+                        //this.Close();//
                     }
                 }
                 else
                 {
                     //this.DialogResult = false;
-                    //errorTextBlock.Text = ;
                     MessageBox.Show("Такого пользователя не существует!"); 
                 }
 
             } 
         }
-
 
         private void Hyperlink_Click(object sender, RoutedEventArgs e)
         {

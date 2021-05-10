@@ -26,7 +26,11 @@
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0">
-
+                <Label x:Name="UserNameLabel" FontSize="32"
+                       FontFamily="Times new roman"
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center"
+                       Height="110" Width="220"></Label>
             </Grid>
 
             <Button x:Name="FuelGridButton" Grid.Row="1" 
