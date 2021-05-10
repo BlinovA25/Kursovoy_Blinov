@@ -23,6 +23,7 @@
     <v:String x:Key="price">Цена</v:String>
     <v:String x:Key="photo">Фото</v:String>
     <v:String x:Key="reviews">Отзывы</v:String>
+    <v:String x:Key="save">Сохранить</v:String>
     <!-- страницы отзывов -->
     <v:String x:Key="user">Пользователь</v:String>
     <v:String x:Key="review">Отзыв</v:String>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5dd4c2fb4db5400785b0e437e817c208" Name="Diagram1">
+        <EntityTypeShape EntityType="GasStationDBModel.C__MigrationHistory" Width="1.5" PointX="7.625" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GasStationDBModel.FUEL" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GasStationDBModel.ORDER" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="GasStationDBModel.USER" Width="1.5" PointX="0.5" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GasStationDBModel.AdminOrder" Width="1.5" PointX="5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="GasStationDBModel.AdminOrdersHist" Width="1.5" PointX="5" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="GasStationDBModel.FK__ORDERS__FuelID__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="GasStationDBModel.FK__ORDERS__UserID__21B6055D" ManuallyRouted="true" >
+          <ConnectorPoint PointX="2" PointY="4.9598990039908006" />
+          <ConnectorPoint PointX="3.5074412214722548" PointY="4.9598990039908006" />
+          <ConnectorPoint PointX="3.5074412214722548" PointY="3.7494921874999996" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

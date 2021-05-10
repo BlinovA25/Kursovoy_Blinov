@@ -22,6 +22,8 @@ namespace GasStationProg
         public AdminWindow()
         {
             InitializeComponent();
+
+            AdminWinFrame.Content = new AdminFuelPage();
         }
 
         //кнопки вспомогательного меню
@@ -48,6 +50,9 @@ namespace GasStationProg
             AdminWinFrame.Content = new AdminOrdersPage();
         }
 
-        
+        private void histButton_Click(object sender, RoutedEventArgs e)
+        {
+            AdminWinFrame.Content = new AdminOrdersPage();
+        }
     }
 }

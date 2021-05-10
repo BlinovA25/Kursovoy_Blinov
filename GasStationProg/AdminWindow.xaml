@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GasStationProg"
         mc:Ignorable="d"
-        Title="AdminWindow" Height="700" Width="1200" 
-        MinHeight="700" MinWidth="1200"
-        MaxHeight="700" MaxWidth="1200"
+        Title="AdminWindow" Height="700" Width="1400" 
+        MinHeight="700" MinWidth="1400"
+        MaxHeight="700" MaxWidth="1400"
         >
     <Grid Background="Gray">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"></ColumnDefinition>
-            <ColumnDefinition Width="8*"></ColumnDefinition>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Column="0">
@@ -45,7 +45,7 @@
 
             <Button x:Name="histButton" Grid.Row="3"
                     Content="История покупок"
-                    Style="{DynamicResource menuButtons}" >
+                    Style="{DynamicResource menuButtons}" Click="histButton_Click" >
 
             </Button>
 

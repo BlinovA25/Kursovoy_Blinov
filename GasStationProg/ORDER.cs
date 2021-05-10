@@ -12,22 +12,17 @@ namespace GasStationProg
     using System;
     using System.Collections.Generic;
     
-    public partial class USER
+    public partial class ORDER
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public USER()
-        {
-            this.ORDERS = new HashSet<ORDER>();
-        }
+        public int idOrder { get; set; }
+        public Nullable<int> UserID { get; set; }
+        public Nullable<int> FuelID { get; set; }
+        public Nullable<decimal> Quantity { get; set; }
+        public Nullable<decimal> OrderSum { get; set; }
+        public Nullable<int> OrderStatus { get; set; }
+        public Nullable<System.DateTime> ArrTime { get; set; }
     
-        public int UserID { get; set; }
-        public string UserName { get; set; }
-        public string UserPass { get; set; }
-        public string Email { get; set; }
-        public bool adm { get; set; }
-        public System.DateTime registrDate { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ORDER> ORDERS { get; set; }
+        public virtual FUEL FUEL { get; set; }
+        public virtual USER USER { get; set; }
     }
 }

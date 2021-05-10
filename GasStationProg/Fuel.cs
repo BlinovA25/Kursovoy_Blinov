@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -11,15 +12,16 @@ namespace GasStationProg
     {
         public FuelContext() : base("DbConnection")
         { }
-
-        public DbSet<Fuel> Fuels { get; set; }
+        public DbSet<FUEL> AdminOrders { get; set; }
     }
 
-    public class Fuel
+    class FUEL
     {
-        public int idFuel { get; set; }
+        [Key]
+        public int FuelID { get; set; }
         public string FuelName { get; set; }
         public decimal FuelPrice { get; set; }
-
     }
+
+    
 }

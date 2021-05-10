@@ -56,9 +56,14 @@
             </Grid.RowDefinitions>
             <Label Content="{DynamicResource password}" VerticalAlignment="Center" 
                    FontSize="18" Grid.Row="0"/>
-            <TextBox x:Name="passwordTB" Grid.Row="1" 
+            <!--<TextBox x:Name="passwordTB" Grid.Row="1" 
                      Margin="5,0,5,5" FontSize="17"
-                     Cursor="{StaticResource UserCursor}"/>
+                     Cursor="{StaticResource UserCursor}" 
+                     PasswordBox.PasswordChanged="passwordTB_PasswordChanged" 
+                     />-->
+            <PasswordBox x:Name="passwordTB" Grid.Row="1" 
+                     Margin="5,0,5,5" FontSize="17" MaxLength="5"
+                     Cursor="{StaticResource UserCursor}"></PasswordBox>
         </Grid>
 
         <Grid x:Name="enterMain" Grid.Row="3" Grid.Column="1">

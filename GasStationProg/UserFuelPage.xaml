@@ -19,7 +19,7 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding FuelID}" Header="{DynamicResource ID}" Width="50"/>
                     <DataGridTextColumn Binding="{Binding FuelName}" Header="{DynamicResource name}" Width="150"/>
-                    <DataGridTextColumn Binding="{Binding FuelCost}" Header="{DynamicResource price}" Width="100"/>
+                    <DataGridTextColumn Binding="{Binding FuelPrice}" Header="{DynamicResource price}" Width="100"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

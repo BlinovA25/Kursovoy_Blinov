@@ -40,38 +40,52 @@ namespace GasStationProg
             Application.Current.Resources.MergedDictionaries.Add(resourceDictionary);
         }
 
-        //private void enterButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    string login = loginTB.Text.Trim();
-        //    string pass = passwordTB.Text.Trim();
+        private void enterButton_Click(object sender, RoutedEventArgs e)
+        {
+            UserContext DB;
 
-        //    if (pass.Length < 6)
-        //    {
-        //        //passwordTB.ToolTip = "Неверный пароль";
-        //        passwordTB.Background = Brushes.DarkRed;
-        //    }
-        //    else 
-        //    { 
-        //        passwordTB.Background = Brushes.Transparent;
+            string login = loginTB.Text.Trim();
+            string pass = passwordTB.Password.Trim(); //Text.Trim();
 
+            if (pass.Length < 1)
+            {
+                //passwordTB.ToolTip = "Неверный пароль";
+                passwordTB.Background = Brushes.DarkRed;
+            }
+            else
+            {
+                passwordTB.Background = Brushes.Transparent;
 
-        //        //User authUser = null;
-        //        //using (ApplicationContext DB = new ApplicationContext) 
-        //        //{
-        //        //    authUser = DB.Users.Where(u => u.login == login && u.password == pass).FirstOrDefault();
-        //        //}
-        //        //if (authUser != null)
-        //        //{
-        //        //    this.DialogResult = true;
-        //        //}
-        //        //else 
-        //        //{ 
-        //        //    this.DialogResult = false;
-        //        //    errorTextBlock.Text = "Такого пользователя не существует!";
-        //        //    //MessageBox.Show(); 
-        //        //}
+                DB = new UserContext();
 
-        //    }
+                USERS authUser = null;
+                //using (ApplicationContext DB = new ApplicationContext)
+                //{
+                    authUser = DB.Users.Where(u => u.UserName == login && u.UserPass == pass).FirstOrDefault();
+                //}
+                if (authUser != null)
+                {
+                    //this.DialogResult = true;
+                    if (authUser.adm == true)
+                    {
+                        AdminWindow AW = new AdminWindow();
+                        AW.ShowDialog();
+                    }
+                    else
+                    {
+                        UserWindow UW = new UserWindow();
+                        UW.ShowDialog();
+                    }
+                }
+                else
+                {
+                    //this.DialogResult = false;
+                    //errorTextBlock.Text = ;
+                    MessageBox.Show("Такого пользователя не существует!"); 
+                }
+
+            } 
+        }
 
 
         private void Hyperlink_Click(object sender, RoutedEventArgs e)
@@ -87,9 +101,19 @@ namespace GasStationProg
             SW.ShowDialog();
         }
 
-        private void enterButton_Click(object sender, RoutedEventArgs e)
+        private void passwordTB_PasswordChanged(object sender, RoutedEventArgs e)
         {
-
+            //passwordTB.PasswordChar = '*';
         }
+
+        //private void passwordTB_TextChanged(object sender, TextChangedEventArgs e)
+        //{
+        //    passwordTB.PasswordChar = '*';
+        //}
+
+        //private void enterButton_Click(object sender, RoutedEventArgs e)
+        //{
+
+        //}
     }
 }
