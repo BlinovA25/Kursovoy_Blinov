@@ -19,6 +19,9 @@ namespace GasStationProg
     /// </summary>
     public partial class RegistrationWindow : Window
     {
+        UserContext db;
+        USERS newUser = new USERS();
+
         public RegistrationWindow()
         {
             InitializeComponent();
@@ -26,6 +29,47 @@ namespace GasStationProg
 
         private void registrateButton_Click(object sender, RoutedEventArgs e)
         {
+            db = new UserContext();
+
+            if (loginTB.Text.Length > 2) 
+            { 
+                newUser.UserName = loginTB.Text; 
+            
+                if (passTB.Text.Length == 5)
+                { 
+                    newUser.UserPass = passTB.Text; 
+                
+                    newUser.Email = mailTB.Text;
+
+                    try
+                    {
+                        db.Database.ExecuteSqlCommand($@"insert into USERS values('{newUser.UserName}', '{newUser.UserPass}', '{newUser.Email}', 0, getdate());");
+                        MessageBox.Show($"Пользователь {newUser.UserName} зарегистрирован.");
+                        this.DialogResult = false;
+                    }
+                    catch
+                    { MessageBox.Show($"Пользователь {newUser.UserName} не зарегистрирован, скорее всего это имя уже занято, попробуйте другое."); }
+                }
+                else 
+                { MessageBox.Show($"Пароль должен содержать ровно 5 символов."); }
+            }
+            else
+            { MessageBox.Show($"Логин должен содержать от 2 до 10 символов."); }
+
+            
+            
+            
+            //newUser.adm = false;
+            //newUser.registrDate = DateTime.Now;
+            //try
+            //{
+            //    db.Database.ExecuteSqlCommand($@"insert into USERS values('{newUser.UserName}', '{newUser.UserPass}', '{newUser.Email}', 0, getdate());");
+            //    MessageBox.Show($"Пользователь {newUser.UserName} зарегистрирован.");
+            //    this.DialogResult = false;
+            //}
+            //catch 
+            //{ MessageBox.Show($"Пользователь {newUser.UserName} не зарегистрирован, скорее всего это имя уже занято, попробуйте другое."); }
+           
 
         }
     }

@@ -25,8 +25,11 @@ namespace GasStationProg
         public UserWindow()
         {
             InitializeComponent();
+
+            UserWinFrame.Content = new UserFuelPage();
             this.Loaded += UserWindow_Loaded;
         }
+
         private void UserWindow_Loaded(object sender, RoutedEventArgs e)
         {
             UserNameLabel.Content = UN;

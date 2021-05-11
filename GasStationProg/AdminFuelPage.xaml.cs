@@ -31,17 +31,17 @@ namespace GasStationProg
         {
             InitializeComponent();
 
-            //try
-            //{
+            try
+            {
                 db = new FuelContext();
 
                 db.fuels.Load(); // загружаем данные //возникает ошибка!!!
                 fuelGrid.ItemsSource = db.fuels.Local.ToBindingList();
 
                 //db.Dispose();
-            //}
-            //catch
-            //{ MessageBox.Show("Ошибка загрузки данных из БД!!!"); }
+            }
+            catch
+            { MessageBox.Show("Ошибка загрузки данных из БД!!!"); }
 
         }
 

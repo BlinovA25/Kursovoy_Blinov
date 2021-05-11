@@ -45,7 +45,7 @@
             <Label Content="{DynamicResource login}" VerticalAlignment="Center" 
                    FontSize="18" Grid.Row="0"/>
             <TextBox x:Name="loginTB" Grid.Row="1" 
-                     Margin="5,0,5,5" FontSize="17"
+                     Margin="5,0,5,5" FontSize="17" MaxLength="10"
                      Cursor="{StaticResource UserCursor}"/>
         </Grid>
 

@@ -1,0 +1,68 @@
+﻿<Window x:Class="GasStationProg.QuantityWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GasStationProg"
+        mc:Ignorable="d"
+        Title="QuantityWindow" Height="300" Width="250"
+        AllowsTransparency="True" Background="Transparent" WindowStyle="None">
+    <Grid>
+        <Border Width="auto" Height="auto" BorderBrush="Black" 
+                BorderThickness="3" CornerRadius="20" Background="DarkGray">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"></RowDefinition>
+                    <RowDefinition Height="3*"></RowDefinition>
+                    <RowDefinition Height="1.7*"></RowDefinition>
+                    <RowDefinition Height="4*"></RowDefinition>
+                    <RowDefinition Height="3*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <TextBlock TextWrapping="Wrap" Margin="5" FontSize="26" FontWeight="Bold" 
+                               VerticalAlignment="Center" HorizontalAlignment="Center"
+                               Text="Топливо выбрано"/>
+                </Grid>
+                
+                <Grid Grid.Row="1">
+                    <TextBlock TextWrapping="Wrap" Margin="5,0,5,0" FontSize="20"
+                               Text="     Введите необходимое количество литров:"/>
+                </Grid>
+                
+                <Grid Grid.Row="2" Margin="5,0,5,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="FuelTypeLabel" Grid.Column="0" Content="" FontSize="20"></Label>
+                    <TextBox x:Name="QuantityTB" Grid.Column="1" Margin="2" FontSize="18"></TextBox>
+                    <Label Grid.Column="2" Content="L" FontSize="20"></Label>
+                </Grid>
+                
+                <!---->
+                
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="0" CornerRadius="10" Margin="10" Background="Orange"
+                            BorderBrush="Black" BorderThickness="1">
+                        <Button x:Name="OrderReady" Click="OrderReady_Click" Background="Transparent" BorderThickness="0">
+                            <TextBlock Text="OK"></TextBlock>
+                        </Button>
+                    </Border>
+
+                    <Border Grid.Column="1" CornerRadius="10" Margin="10" Background="Orange" 
+                            BorderBrush="Black" BorderThickness="1">
+                        <Button x:Name="Cancel" Click="Cancel_Click" Background="Transparent" BorderThickness="0">
+                            <TextBlock Text="Cancel"></TextBlock>
+                        </Button>
+                    </Border>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
