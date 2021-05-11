@@ -45,9 +45,9 @@
                         Height="auto" Width="130" FontSize="18"/>
 
 
-                <Button x:Name="downloadButton" Content="{DynamicResource download}"
+                <!--<Button x:Name="downloadButton" Content="{DynamicResource download}"
                          Margin="0, 5, 10, 5"
-                        Height="auto" Width="130" FontSize="18"/>
+                        Height="auto" Width="130" FontSize="18"/>-->
 
             </StackPanel>
         </Grid>

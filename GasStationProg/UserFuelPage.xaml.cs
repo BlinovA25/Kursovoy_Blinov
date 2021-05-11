@@ -33,11 +33,14 @@ namespace GasStationProg
         ORDERS newOrder = new ORDERS();
 
         public string FN;
+        public string UserName;
+        public decimal Price;
 
-        public UserFuelPage()
+        public UserFuelPage(string UN)
         {
             InitializeComponent();
             //connectionString = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
+            UserName = UN;
 
             downloadDB();
         }
@@ -99,19 +102,12 @@ namespace GasStationProg
                     if (fuel != null)
                     {
                         FN = fuel.FuelName;
-                        //Fdb.fuels.Remove(fuel);
+                        Price = fuel.FuelPrice;
                     }
                 }
             }
-            //Fdb.SaveChanges();
-
-            QuantityWindow QW = new QuantityWindow(FN);
+            QuantityWindow QW = new QuantityWindow(FN, Price, UserName);
             QW.ShowDialog();
-
-            //Odb.Database.ExecuteSqlCommand($@"");
-            //MessageBox.Show($"Пользователь {newUser.UserName} зарегистрирован.");
-
-            //MessageBox.Show("Выбрано топливо: ", "Введите количество литров", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 }

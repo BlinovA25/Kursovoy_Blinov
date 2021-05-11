@@ -21,23 +21,24 @@ namespace GasStationProg
     {
         public string UN { get; set; }
         public int UID { get; set; }
+        //public string UserName;
 
         public UserWindow()
         {
             InitializeComponent();
 
-            UserWinFrame.Content = new UserFuelPage();
             this.Loaded += UserWindow_Loaded;
         }
 
         private void UserWindow_Loaded(object sender, RoutedEventArgs e)
         {
             UserNameLabel.Content = UN;
+            UserWinFrame.Content = new UserFuelPage(UN);
         }
        
         private void FuelGridButton_Click(object sender, RoutedEventArgs e)
         {
-            UserWinFrame.Content = new UserFuelPage();
+            UserWinFrame.Content = new UserFuelPage(UN);
         }
 
         private void ReviewsGridButton_Click(object sender, RoutedEventArgs e)
@@ -47,7 +48,7 @@ namespace GasStationProg
 
         private void OrdersGridButton_Click(object sender, RoutedEventArgs e)
         {
-            UserWinFrame.Content = new UserOrdersPage(UN);
+            UserWinFrame.Content = new UserOrdersPage(UserNameLabel.Content.ToString());
         }
         
         

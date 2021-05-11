@@ -20,23 +20,41 @@ namespace GasStationProg
     public partial class QuantityWindow : Window
     {
         public int Q;
+        public decimal P;
+        public decimal Sum;
         public string FuelName;
-        public string User;
+        public string UserName;
+
+        public string UN { get; set; }
         OrderContext db;
 
-        public QuantityWindow(string FN)
+        public QuantityWindow(string FN, decimal Price, string un)
         {
             InitializeComponent();
+            UN = un;
+            //MessageBox.Show(UN);
 
             FuelTypeLabel.Content = FN;
             FuelName = FN;
+            P = Price;
+        }
+
+        private void QuantityWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            //UserNameLabel.Content = UN;
         }
 
         private void OrderReady_Click(object sender, RoutedEventArgs e)
         {
+            db = new OrderContext();
             Q = Convert.ToInt32(QuantityTB.Text);
-            db.Database.ExecuteSqlCommand($@"insert into ORDERS values('{User}', '{FuelName}', {Q}, 1, 0, getdate(), '');");
-            //MessageBox.Show($"Пользователь {newUser.UserName} зарегистрирован.");
+            Sum = Q * P;
+
+            UserName = UN;
+           
+            db.Database.ExecuteSqlCommand($@"insert into ORDERS values('{UN}', '{FuelName}', {Q}, {Sum}, 0, getdate(), '');");
+            //MessageBox.Show($"Пользователь {UN} зарегистрирован.");
+            this.DialogResult = false;
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
