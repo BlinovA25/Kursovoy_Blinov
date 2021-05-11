@@ -29,9 +29,10 @@ namespace GasStationProg
         //DataTable fuelTable;
 
         FuelContext Fdb;
-        OrderContext Odb;
+        //OrderContext Odb;
         ORDERS newOrder = new ORDERS();
 
+        public string FN;
 
         public UserFuelPage()
         {
@@ -90,7 +91,21 @@ namespace GasStationProg
 
         private void chooseButton_Click(object sender, RoutedEventArgs e)
         {
-            QuantityWindow QW = new QuantityWindow();
+            if (fuelGrid.SelectedItems.Count > 0)
+            {
+                for (int i = 0; i < fuelGrid.SelectedItems.Count; i++)
+                {
+                    FUEL fuel = fuelGrid.SelectedItems[i] as FUEL;
+                    if (fuel != null)
+                    {
+                        FN = fuel.FuelName;
+                        //Fdb.fuels.Remove(fuel);
+                    }
+                }
+            }
+            //Fdb.SaveChanges();
+
+            QuantityWindow QW = new QuantityWindow(FN);
             QW.ShowDialog();
 
             //Odb.Database.ExecuteSqlCommand($@"");

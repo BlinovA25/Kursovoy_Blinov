@@ -69,12 +69,14 @@ namespace GasStationProg
         public decimal Quantity { get; set; }
         public decimal OrderSum { get; set; }
 
-        public int UserID { get; set; }
+
+        public string UserName { get; set; }
+        //public int UserID { get; set; }
         //[ForeignKey("UserID")]
         //public USERS users { get; set; }
 
-
-        public int FuelID { get; set; }
+        public string FuelName { get; set; }
+        //public int FuelID { get; set; }
         //[ForeignKey("FuelID")]
         //public FUEL fuel { get; set; }
 
@@ -82,5 +84,6 @@ namespace GasStationProg
 
         public DateTime ArrTime { get; set; }
 
+        public DateTime ReadyTime { get; set; }
     }
 }

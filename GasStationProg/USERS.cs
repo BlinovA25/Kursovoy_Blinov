@@ -19,8 +19,8 @@ namespace GasStationProg
     [Table("USERS")]
     class USERS
     {
+        //public int UserID { get; set; }
         [Key]
-        public int UserID { get; set; }
         public string UserName { get; set; }
         public string UserPass { get; set; }
         public string Email { get; set; }

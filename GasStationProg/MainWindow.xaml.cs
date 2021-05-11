@@ -75,7 +75,7 @@ namespace GasStationProg
                         UserWindow UW = new UserWindow();// 
                         //mainWindow = new MainMainWindow();
                         UW.UN = login;
-                        UW.UID = authUser.UserID;
+                        //UW.UID = authUser.UserName;
                         UW.ShowDialog();
 
                         //this.Close();//

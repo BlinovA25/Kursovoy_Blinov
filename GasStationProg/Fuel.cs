@@ -19,8 +19,8 @@ namespace GasStationProg
     [Table("FUEL")]
     class FUEL
     {
+        //public int FuelID { get; set; }
         [Key]
-        public int FuelID { get; set; }
         public string FuelName { get; set; }
         public decimal FuelPrice { get; set; }
     }

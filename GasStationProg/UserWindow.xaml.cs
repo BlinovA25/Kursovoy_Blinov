@@ -47,13 +47,13 @@ namespace GasStationProg
 
         private void OrdersGridButton_Click(object sender, RoutedEventArgs e)
         {
-            UserWinFrame.Content = new UserOrdersPage(UID);
+            UserWinFrame.Content = new UserOrdersPage(UN);
         }
         
         
         private void OrdersHistButton_Click(object sender, RoutedEventArgs e)
         {
-            UserWinFrame.Content = new UserHistPage(UID);
+            UserWinFrame.Content = new UserHistPage(UN);
         }
 
 

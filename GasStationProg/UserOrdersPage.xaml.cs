@@ -21,7 +21,7 @@ namespace GasStationProg
     /// </summary>
     public partial class UserOrdersPage : Page
     {
-        public UserOrdersPage(int UID)
+        public UserOrdersPage(string UN)
         {
             OrderContext db;
 
@@ -29,7 +29,7 @@ namespace GasStationProg
             try
             {
                 db = new OrderContext();
-                db.Orders.Where(u => u.OrderStatus == 0 && u.UserID == UID).Load();
+                db.Orders.Where(u => u.OrderStatus == 0 && u.UserName == UN).Load();
                 orderGrid.ItemsSource = db.Orders.Local.ToBindingList();
             }
             catch

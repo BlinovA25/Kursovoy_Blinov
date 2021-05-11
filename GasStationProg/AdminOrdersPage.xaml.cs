@@ -58,6 +58,8 @@ namespace GasStationProg
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
             db.SaveChanges();
+
+            db.Database.ExecuteSqlCommand($@"update ORDERS set ReadyTime = getdate() where OrderStatus = 1;");
         }
 
         private void deleteButton_Click(object sender, RoutedEventArgs e)

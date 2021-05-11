@@ -17,10 +17,10 @@
         <Grid Grid.Row="0" Margin="10, 10, 10, 0">
             <DataGrid x:Name="orderGrid" IsReadOnly="False" AutoGenerateColumns="False" FontSize="15" Margin="5,5,5,5">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding idOrder}" Header="{DynamicResource idOrder}" Width="50"/>
-                    <DataGridTextColumn Binding="{Binding UserID}" Header="{DynamicResource username}" Width="165"/>
+                    <!--<DataGridTextColumn Binding="{Binding idOrder}" Header="{DynamicResource idOrder}" Width="50"/>-->
+                    <DataGridTextColumn Binding="{Binding UserName}" Header="{DynamicResource username}" Width="165"/>
                     <DataGridTextColumn Binding="{Binding ArrTime}" Header="{DynamicResource OrderDate}" Width="190"/>
-                    <DataGridTextColumn Binding="{Binding FuelID}" Header="{DynamicResource idFuel}" Width="95"/>
+                    <DataGridTextColumn Binding="{Binding FuelName}" Header="{DynamicResource idFuel}" Width="95"/>
                     <DataGridTextColumn Binding="{Binding Quantity}" Header="{DynamicResource quantity}" Width="115"/>
                     <DataGridTextColumn Binding="{Binding OrderSum}" Header="{DynamicResource OrderSum}" Width="80"/>
                     <!--<DataGridTextColumn Binding="{Binding ComplDate}" Header="{DynamicResource ComplDate}" Width="125"/>-->
