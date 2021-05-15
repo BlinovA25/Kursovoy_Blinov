@@ -80,7 +80,7 @@ namespace GasStationProg
         //[ForeignKey("FuelID")]
         //public FUEL fuel { get; set; }
 
-        public int OrderStatus { get; set; }
+        public bool OrderStatus { get; set; }
 
         public DateTime ArrTime { get; set; }
 

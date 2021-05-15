@@ -1,0 +1,35 @@
+﻿<Page x:Class="GasStationProg.UserChangeInfo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GasStationProg"
+      mc:Ignorable="d" 
+      Height="250" Width="240"
+      Title="UserChangeInfo">
+
+    <Grid Background="Transparent" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Content="{DynamicResource login}" Grid.Row="0" FontSize="20"></Label>
+        <TextBox x:Name="loginTB" Grid.Row="1" Margin="5,2,10,2" FontSize="16" MaxLength="10"></TextBox>
+
+        <Label Content="{DynamicResource password}" Grid.Row="2" FontSize="20"></Label>
+        <TextBox x:Name="passTB" Grid.Row="3" Margin="5,2,10,2" FontSize="16" MaxLength="5"></TextBox>
+
+        <Label Content="{DynamicResource email}" Grid.Row="4" FontSize="20"></Label>
+        <TextBox x:Name="mailTB" Grid.Row="5" Margin="5,2,10,2" FontSize="16"></TextBox>
+
+        <Button x:Name="ChangeInfo" Grid.Row="6" Margin="5,2,10,2" 
+                Content="{DynamicResource changeInfo}"
+                HorizontalAlignment="Center" Width="190" Click="ChangeInfo_Click"></Button>
+    </Grid>
+</Page>

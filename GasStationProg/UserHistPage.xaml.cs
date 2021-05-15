@@ -31,7 +31,7 @@ namespace GasStationProg
             try
             {
                 db = new OrderContext();
-                db.Orders.Where(u => u.OrderStatus == 1 && u.UserName == UN).Load();
+                db.Orders.Where(u => u.OrderStatus == true && u.UserName == UN).Load();
                 orderGrid.ItemsSource = db.Orders.Local.ToBindingList();
             }
             catch

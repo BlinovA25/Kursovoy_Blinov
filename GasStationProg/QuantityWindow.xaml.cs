@@ -44,10 +44,19 @@ namespace GasStationProg
             //UserNameLabel.Content = UN;
         }
 
+        private void QuantityTB_PreviewTextInput(object sender, TextCompositionEventArgs e) 
+        {
+            e.Handled = !(Char.IsDigit(e.Text, 0));
+        }
+
         private void OrderReady_Click(object sender, RoutedEventArgs e)
         {
             db = new OrderContext();
-            Q = Convert.ToInt32(QuantityTB.Text);
+
+            try
+            { Q = Convert.ToInt32(QuantityTB.Text); }
+            catch 
+            { }
             Sum = Q * P;
 
             UserName = UN;
@@ -60,6 +69,16 @@ namespace GasStationProg
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = false;
+        }
+
+        private void OrderReady_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+
+        }
+
+        private void QuantityTB_PreviewTextInput_1(object sender, TextCompositionEventArgs e)
+        {
+
         }
     }
 }

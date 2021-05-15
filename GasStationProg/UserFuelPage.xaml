@@ -17,7 +17,7 @@
         <Grid Grid.Row="0" Margin="10, 10, 10, 0">
             <DataGrid x:Name="fuelGrid" IsReadOnly="True" AutoGenerateColumns="False" FontSize="15" Margin="5,5,5,5">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding FuelID}" Header="{DynamicResource ID}" Width="50"/>
+                    <!--<DataGridTextColumn Binding="{Binding FuelID}" Header="{DynamicResource ID}" Width="50"/>-->
                     <DataGridTextColumn Binding="{Binding FuelName}" Header="{DynamicResource name}" Width="150"/>
                     <DataGridTextColumn Binding="{Binding FuelPrice}" Header="{DynamicResource price}" Width="100"/>
                 </DataGrid.Columns>

@@ -31,45 +31,46 @@ namespace GasStationProg
         {
             db = new UserContext();
 
-            if (loginTB.Text.Length > 2) 
-            { 
-                newUser.UserName = loginTB.Text; 
-            
-                if (passTB.Text.Length == 5)
-                { 
-                    newUser.UserPass = passTB.Text; 
-                
-                    newUser.Email = mailTB.Text;
-
-                    try
-                    {
-                        db.Database.ExecuteSqlCommand($@"insert into USERS values('{newUser.UserName}', '{newUser.UserPass}', '{newUser.Email}', 0, getdate());");
-                        MessageBox.Show($"Пользователь {newUser.UserName} зарегистрирован.");
-                        this.DialogResult = false;
-                    }
-                    catch
-                    { MessageBox.Show($"Пользователь {newUser.UserName} не зарегистрирован, скорее всего это имя уже занято, попробуйте другое."); }
+            if (loginTB.Text == "Admin" && passTB.Text == "00000")
+            {
+                newUser.UserName = loginTB.Text;
+                newUser.UserPass = passTB.Text;
+                try
+                {
+                    db.Database.ExecuteSqlCommand($@"insert into USERS values('{newUser.UserName}', '{newUser.UserPass}', ' ', 1, getdate());");
+                    MessageBox.Show($"Администратор зарегистрирован успешно.");
+                    this.DialogResult = false;
                 }
-                else 
-                { MessageBox.Show($"Пароль должен содержать ровно 5 символов."); }
+                catch
+                { MessageBox.Show($"Пользователь {newUser.UserName} уже существует."); }
             }
             else
-            { MessageBox.Show($"Логин должен содержать от 2 до 10 символов."); }
+            {
+                if (loginTB.Text.Length > 2)
+                {
+                    newUser.UserName = loginTB.Text;
 
-            
-            
-            
-            //newUser.adm = false;
-            //newUser.registrDate = DateTime.Now;
-            //try
-            //{
-            //    db.Database.ExecuteSqlCommand($@"insert into USERS values('{newUser.UserName}', '{newUser.UserPass}', '{newUser.Email}', 0, getdate());");
-            //    MessageBox.Show($"Пользователь {newUser.UserName} зарегистрирован.");
-            //    this.DialogResult = false;
-            //}
-            //catch 
-            //{ MessageBox.Show($"Пользователь {newUser.UserName} не зарегистрирован, скорее всего это имя уже занято, попробуйте другое."); }
-           
+                    if (passTB.Text.Length == 5)
+                    {
+                        newUser.UserPass = passTB.Text;
+                        newUser.Email = mailTB.Text;
+
+                        try
+                        {
+                            db.Database.ExecuteSqlCommand($@"insert into USERS values('{newUser.UserName}', '{newUser.UserPass}', '{newUser.Email}', 0, getdate());");
+                            MessageBox.Show($"Пользователь {newUser.UserName} зарегистрирован.");
+                            this.DialogResult = false;
+                        }
+                        catch
+                        { MessageBox.Show($"Пользователь {newUser.UserName} не зарегистрирован, скорее всего это имя уже занято, попробуйте другое."); }
+                    }
+                    else
+                    { MessageBox.Show($"Пароль должен содержать ровно 5 символов."); }
+                }
+                else
+                { MessageBox.Show($"Логин должен содержать от 2 до 10 символов."); }
+
+            }
 
         }
     }

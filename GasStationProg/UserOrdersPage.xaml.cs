@@ -29,7 +29,7 @@ namespace GasStationProg
             try
             {
                 db = new OrderContext();
-                db.Orders.Where(u => u.OrderStatus == 0 && u.UserName == UN).Load();
+                db.Orders.Where(u => u.OrderStatus == false && u.UserName == UN).Load();
                 orderGrid.ItemsSource = db.Orders.Local.ToBindingList();
             }
             catch

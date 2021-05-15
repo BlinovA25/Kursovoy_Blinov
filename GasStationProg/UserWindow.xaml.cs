@@ -43,7 +43,7 @@ namespace GasStationProg
 
         private void ReviewsGridButton_Click(object sender, RoutedEventArgs e)
         {
-            UserWinFrame.Content = new ReviewPage();
+            UserWinFrame.Content = new ReviewPage(UN);
         }
 
         private void OrdersGridButton_Click(object sender, RoutedEventArgs e)
@@ -61,9 +61,14 @@ namespace GasStationProg
         //кнопки вспомогательного меню
         private void changeUserButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-            MainWindow MW = new MainWindow();
-            MW.ShowDialog();
+            if (ChangeInfoFrame.Content != null) 
+            { ChangeInfoFrame.Content = null; }
+            else 
+            { ChangeInfoFrame.Content = new UserChangeInfo(UN); }
+                
+            //this.Close();
+            //MainWindow MW = new MainWindow();
+            //MW.ShowDialog();
         }
 
         private void setButton_Click(object sender, RoutedEventArgs e)

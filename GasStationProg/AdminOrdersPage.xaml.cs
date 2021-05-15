@@ -16,6 +16,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Net.Mail;
+using System.Net;
 
 namespace GasStationProg
 {
@@ -36,18 +38,20 @@ namespace GasStationProg
         public AdminOrdersPage()
         {
             InitializeComponent();
-
+            
+            
+            //SendEmail();
             try
-            {
-                db = new OrderContext();
+            {    
+                 //SendEmailAsync();
+                 db = new OrderContext();
 
                 //ORDERS ord = null;
                 //ord = db.Orders.Where(o => o.OrderStatus == 0).SelectMany<ORDERS>;
 
                 //var query = db.Orders.Where(u => u.OrderStatus > 0).OrderBy(u => u.idOrder);
-                db.Orders.Where(u => u.OrderStatus == 0).Load(); // загружаем данные //возникает ошибка!!!
+                db.Orders.Where(u => u.OrderStatus == false).Load(); // загружаем данные //возникает ошибка!!!
                 orderGrid.ItemsSource = db.Orders.Local.ToBindingList();
-
 
                 ////db.Dispose();
             }
@@ -55,11 +59,53 @@ namespace GasStationProg
             { MessageBox.Show("Ошибка загрузки данных из БД!!!"); }
         }
 
+
+        private void SendEmail() 
+        {
+            // отправитель - устанавливаем адрес и отображаемое в письме имя
+            MailAddress from = new MailAddress("antoha2550@mail.ru", "Anton");
+            // кому отправляем
+            MailAddress to = new MailAddress("antik.2550@mail.ru");
+            // создаем объект сообщения
+            MailMessage m = new MailMessage(from, to);
+            // тема письма
+            m.Subject = "Тест";
+            // текст письма
+            m.Body = "<h2>Письмо-тест работы smtp-клиента</h2>";
+            // письмо представляет код html
+            m.IsBodyHtml = true;
+            // адрес smtp-сервера и порт, с которого будем отправлять письмо
+            SmtpClient smtp = new SmtpClient("smtp.mail.ru", 465);
+            // логин и пароль
+            smtp.Credentials = new NetworkCredential("antoha2550@mail.ru", "253647ab");
+            smtp.EnableSsl = true;
+            smtp.Send(m);
+            Console.Read();
+        }
+
+        //private static async Task SendEmailAsync()
+        //{
+        //    MailAddress from = new MailAddress("antoha2550@mail.ru", "Tom");
+        //    MailAddress to = new MailAddress("antik.2550@mail.ru");
+        //    MailMessage m = new MailMessage(from, to);
+        //    m.Subject = "Тест";
+        //    m.Body = "Письмо-тест 2 работы smtp-клиента";
+        //    SmtpClient smtp = new SmtpClient("smtp.mail.ru", 587);
+        //    smtp.Credentials = new NetworkCredential("antoha2550@mail.ru", "253647ab");
+        //    smtp.EnableSsl = true;
+        //    await smtp.SendMailAsync(m);
+        //    Console.WriteLine("Письмо отправлено");
+        //}
+
+
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
             db.SaveChanges();
-
-            db.Database.ExecuteSqlCommand($@"update ORDERS set ReadyTime = getdate() where OrderStatus = 1;");
+            try
+            {
+                db.Database.ExecuteSqlCommand($@"update top(1) ORDERS set ReadyTime = getdate() where OrderStatus = 1;");//
+            }
+            catch { }
         }
 
         private void deleteButton_Click(object sender, RoutedEventArgs e)

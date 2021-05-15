@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:GasStationProg"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="RegistrationWindow" Height="500" Width="700" 
-        MaxHeight="500" MaxWidth="700" MinHeight="500" MinWidth="700">
+        Title="Registration" Height="500" Width="700" 
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid Background="DarkGray">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"></ColumnDefinition>

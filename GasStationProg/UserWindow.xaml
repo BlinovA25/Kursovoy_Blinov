@@ -6,8 +6,7 @@
         xmlns:local="clr-namespace:GasStationProg"
         mc:Ignorable="d"
         Title="UserWindow" Height="700" Width="1200" 
-        MinHeight="700" MinWidth="1200"
-        MaxHeight="700" MaxWidth="1200">
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid Background="Gray">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"></ColumnDefinition>
@@ -16,12 +15,12 @@
 
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="3*"></RowDefinition>
                 <RowDefinition Height="1.5*"></RowDefinition>
                 <RowDefinition Height="1.5*"></RowDefinition>
                 <RowDefinition Height="1.5*"></RowDefinition>
                 <RowDefinition Height="1.5*"></RowDefinition>
-                <RowDefinition Height="4*"></RowDefinition>
+                <RowDefinition Height="1.5*"></RowDefinition>
+                <RowDefinition Height="5.5*"></RowDefinition>
                 <RowDefinition Height="2*"></RowDefinition>
             </Grid.RowDefinitions>
 
@@ -29,8 +28,7 @@
                 <Label x:Name="UserNameLabel" FontSize="32"
                        FontFamily="Times new roman"
                        HorizontalAlignment="Center" 
-                       VerticalAlignment="Center"
-                       Height="110" Width="220"></Label>
+                       VerticalAlignment="Center"></Label>
             </Grid>
 
             <Button x:Name="FuelGridButton" Grid.Row="1" 
@@ -60,6 +58,9 @@
                     Click="OrdersHistButton_Click">
 
             </Button>
+
+            <Frame x:Name="ChangeInfoFrame" Grid.Row="5" NavigationUIVisibility="Hidden">
+            </Frame>
 
             <Grid Grid.Row="6">
                 <Grid.ColumnDefinitions>

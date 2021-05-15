@@ -59,7 +59,10 @@ namespace GasStationProg
                 DB = new UserContext();
                 USERS authUser = null;
                 authUser = DB.Users.Where(u => u.UserName == login && u.UserPass == pass).FirstOrDefault();
-
+                
+                //скрывается и новое окно тоже
+                //this.WindowState = WindowState.Minimized;
+                
                 if (authUser != null)
                 {
                     //this.DialogResult = true;
@@ -80,6 +83,7 @@ namespace GasStationProg
 
                         //this.Close();//
                     }
+                   
                 }
                 else
                 {
@@ -95,6 +99,8 @@ namespace GasStationProg
             //вызов окна регистрации пользователей
             RegistrationWindow RW = new RegistrationWindow();
             RW.ShowDialog();
+
+            //MainWindow.Hide();
         }
 
         private void setButton_Click(object sender, RoutedEventArgs e)
@@ -103,19 +109,5 @@ namespace GasStationProg
             SW.ShowDialog();
         }
 
-        private void passwordTB_PasswordChanged(object sender, RoutedEventArgs e)
-        {
-            //passwordTB.PasswordChar = '*';
-        }
-
-        //private void passwordTB_TextChanged(object sender, TextChangedEventArgs e)
-        //{
-        //    passwordTB.PasswordChar = '*';
-        //}
-
-        //private void enterButton_Click(object sender, RoutedEventArgs e)
-        //{
-
-        //}
     }
 }

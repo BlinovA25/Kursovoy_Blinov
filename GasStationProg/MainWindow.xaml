@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:GasStationProg"
         mc:Ignorable="d"
         Title="Salad with gas station" Height="500" Width="350"
-        MaxHeight="600" MaxWidth="450" MinHeight="500" MinWidth="350">
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Cursor x:Key="UserCursor">
             F:\OOP\GasStationProg_1\GasStationProg_1\Pist.cur
