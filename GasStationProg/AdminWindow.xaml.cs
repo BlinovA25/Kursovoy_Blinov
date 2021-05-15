@@ -37,7 +37,10 @@ namespace GasStationProg
 
         private void changeUserButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if (mailFrame.Content != null)
+            { mailFrame.Content = null; }
+            else
+            { mailFrame.Content = new AdminEmailPage(); }
         }
 
 

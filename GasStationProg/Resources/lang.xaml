@@ -47,8 +47,9 @@
     <v:String x:Key="cancel">Отмена</v:String>
     <!-- Изменение личной информации -->
     <v:String x:Key="changeInfo">Изменить информацию</v:String>
-    
-    
+    <!-- Отправка писем -->
+    <v:String x:Key="to">Получатель:</v:String>
+    <v:String x:Key="mailtext">Текст письма:</v:String>
     
     <!--<v:String x:Key="menu">Главное меню</v:String>
     <v:String x:Key="ShowItems">Топливо</v:String>

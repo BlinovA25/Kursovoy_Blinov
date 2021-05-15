@@ -94,6 +94,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AdminEmailPage.xaml.cs">
+      <DependentUpon>AdminEmailPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AdminFuelPage.xaml.cs">
       <DependentUpon>AdminFuelPage.xaml</DependentUpon>
     </Compile>
@@ -138,6 +141,10 @@
     <Compile Include="UserWindow.xaml.cs">
       <DependentUpon>UserWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="AdminEmailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AdminFuelPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

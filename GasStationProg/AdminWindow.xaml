@@ -9,8 +9,8 @@
         ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid Background="Gray">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"></ColumnDefinition>
-            <ColumnDefinition Width="10*"></ColumnDefinition>
+            <ColumnDefinition Width="2.5*"></ColumnDefinition>
+            <ColumnDefinition Width="11.5*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Column="0">
@@ -47,7 +47,7 @@
 
             </Button>
 
-
+            <Frame x:Name="mailFrame" Grid.Row="4" NavigationUIVisibility="Hidden"></Frame>
 
 
             <Grid Grid.Row="5">
@@ -56,6 +56,14 @@
                     <ColumnDefinition Width="1*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
+
+                <Button x:Name="sendMailButton" Grid.Column="0"
+                        VerticalAlignment="Bottom"
+                        HorizontalAlignment="Left"
+                        Height="auto" Margin="10" MaxWidth="80"
+                        Click="changeUserButton_Click">
+                    <Image Source="F:\ООП курсач\GasStationProg\mail.png"/>
+                </Button>
                 <!--<Button x:Name="changeUserButton" Grid.Column="0"
                         VerticalAlignment="Bottom"
                         HorizontalAlignment="Left"
