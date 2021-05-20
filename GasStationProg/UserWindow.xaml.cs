@@ -73,9 +73,16 @@ namespace GasStationProg
 
         private void setButton_Click(object sender, RoutedEventArgs e)
         {
-
+            SettingsWindow SW = new SettingsWindow();
+            SW.ShowDialog();
         }
 
-        
+        private void exitButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow MW = new MainWindow();
+            MW.Show();
+
+            this.Close();
+        }
     }
 }

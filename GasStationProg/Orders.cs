@@ -66,6 +66,7 @@ namespace GasStationProg
     {
         [Key]
         public int idOrder{ get; set; }
+        [RegularExpression(@"^[0-9]*", ErrorMessage = "Количество литров должно быть от 10 до 100.")]
         public decimal Quantity { get; set; }
         public decimal OrderSum { get; set; }
 

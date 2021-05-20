@@ -15,11 +15,11 @@
 
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="3*"></RowDefinition>
                 <RowDefinition Height="1.5*"></RowDefinition>
                 <RowDefinition Height="1.5*"></RowDefinition>
                 <RowDefinition Height="1.5*"></RowDefinition>
-                <RowDefinition Height="5.5*"></RowDefinition>
+                <RowDefinition Height="1.5*"></RowDefinition>
+                <RowDefinition Height="7*"></RowDefinition>
                 <RowDefinition Height="2*"></RowDefinition>
             </Grid.RowDefinitions>
 
@@ -27,27 +27,36 @@
                 
             </Grid>
 
+            
+            <!-- Style="{DynamicResource menuButtons}"  -->
             <Button x:Name="FuelGridButton" Grid.Row="1" 
                     Content="{DynamicResource fuelButton}"
-                    Style="{DynamicResource menuButtons}" 
+                    Background="#FFBEE600"
+                    Width="200" Height="50"
+                    FontSize="18"
                     Click="FuelGridButton_Click">
                 
             </Button>
 
             <Button x:Name="OrdersGridButton" Grid.Row="2"
                     Content="{DynamicResource ordersButton}"
-                    Style="{DynamicResource menuButtons}" 
+                    Background="#FFBEE600"
+                    Width="200" Height="50"
+                    FontSize="18"
                     Click="OrdersGridButton_Click">
 
             </Button>
 
             <Button x:Name="histButton" Grid.Row="3"
-                    Content="История покупок"
-                    Style="{DynamicResource menuButtons}" Click="histButton_Click" >
+                    Content="{DynamicResource hist}"
+                    Background="#FFBEE600"
+                    Width="200" Height="50"
+                    FontSize="18"
+                    Click="histButton_Click" >
 
             </Button>
 
-            <Frame x:Name="mailFrame" Grid.Row="4" NavigationUIVisibility="Hidden"></Frame>
+            <Frame x:Name="mailFrame" Grid.Row="4" NavigationUIVisibility="Hidden" Margin="25,10"></Frame>
 
 
             <Grid Grid.Row="5">
@@ -57,13 +66,14 @@
                 </Grid.ColumnDefinitions>
 
 
-                <Button x:Name="sendMailButton" Grid.Column="0"
+                <!--<Button x:Name="sendMailButton" Grid.Column="0"
                         VerticalAlignment="Bottom"
                         HorizontalAlignment="Left"
-                        Height="auto" Margin="10" MaxWidth="80"
-                        Click="changeUserButton_Click">
+                        Width="70" Height="60" Margin="25,10" MaxWidth="80"
+                        Click="changeUserButton_Click"
+                        Background="#FFBEE600">
                     <Image Source="F:\ООП курсач\GasStationProg\mail.png"/>
-                </Button>
+                </Button>-->
                 <!--<Button x:Name="changeUserButton" Grid.Column="0"
                         VerticalAlignment="Bottom"
                         HorizontalAlignment="Left"
@@ -73,12 +83,23 @@
                 </Button>-->
 
                 <Button x:Name="setButton" Click="setButton_Click" 
-                        Grid.Column="1" 
+                        Grid.Column="0" 
                         VerticalAlignment="Bottom"
                         HorizontalAlignment="Right"
-                        Height="auto" Margin="10" 
-                        MaxWidth="80">
-                    <Image Source="F:\ООП курсач\GasStationProg\settings.png"/>
+                        Margin="25,10" 
+                        Width="70" Height="60"
+                        Background="#FFBEE600">
+                    <Image  Source="F:\ООП курсач\GasStationProg\settings.png"/>
+                </Button>
+
+                <Button x:Name="exitButton" Grid.Column="1"
+                        VerticalAlignment="Bottom"
+                        HorizontalAlignment="Center"
+                        Margin="25,10"
+                        Width="70" Height="60"
+                        Background="#FFBEE600"
+                        Click="exitButton_Click">
+                    <Image Source="F:\ООП курсач\GasStationProg\exit.png"/>
                 </Button>
             </Grid>
         </Grid>

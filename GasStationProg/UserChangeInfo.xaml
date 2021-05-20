@@ -4,32 +4,54 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GasStationProg"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      Height="250" Width="240"
+      Height="200" Width="210"
       Title="UserChangeInfo">
 
-    <Grid Background="Transparent" >
+    <Page.Resources>
+        <Cursor x:Key="UserCursor">
+            F:\OOP\GasStationProg_1\GasStationProg_1\Pist.cur
+        </Cursor>
+    </Page.Resources>
+    
+    <Grid Background="Transparent">
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"></RowDefinition>
-            <RowDefinition Height="2*"></RowDefinition>
-            <RowDefinition Height="2*"></RowDefinition>
-            <RowDefinition Height="2*"></RowDefinition>
-            <RowDefinition Height="2*"></RowDefinition>
-            <RowDefinition Height="2*"></RowDefinition>
             <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Label Content="{DynamicResource login}" Grid.Row="0" FontSize="20"></Label>
+        <TextBox x:Name="loginTB" Grid.Row="0" FontSize="16" 
+                     materialDesign:HintAssist.Hint="{DynamicResource login}" 
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                     Cursor="{StaticResource UserCursor}" MaxLength="10"></TextBox>
+
+        <PasswordBox x:Name="passTB" Grid.Row="1" FontSize="16" 
+                        materialDesign:HintAssist.Hint="{DynamicResource password}" 
+                        Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
+                        Cursor="{StaticResource UserCursor}" MaxLength="5"></PasswordBox>
+
+        <TextBox x:Name="mailTB" Grid.Row="2" FontSize="16"
+                     materialDesign:HintAssist.Hint="{DynamicResource email}" 
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     Cursor="{StaticResource UserCursor}"></TextBox>
+
+        <!--<Label Content="{DynamicResource login}" Grid.Row="0" FontSize="16"></Label>
         <TextBox x:Name="loginTB" Grid.Row="1" Margin="5,2,10,2" FontSize="16" MaxLength="10"></TextBox>
 
-        <Label Content="{DynamicResource password}" Grid.Row="2" FontSize="20"></Label>
-        <TextBox x:Name="passTB" Grid.Row="3" Margin="5,2,10,2" FontSize="16" MaxLength="5"></TextBox>
+        <Label Content="{DynamicResource password}" Grid.Row="2" FontSize="16"></Label>
+        <TextBox x:Name="passTB" Grid.Row="3" FontSize="16" MaxLength="5"></TextBox>
 
-        <Label Content="{DynamicResource email}" Grid.Row="4" FontSize="20"></Label>
-        <TextBox x:Name="mailTB" Grid.Row="5" Margin="5,2,10,2" FontSize="16"></TextBox>
+        <Label Content="{DynamicResource email}" Grid.Row="4" FontSize="16"></Label>
+        <TextBox x:Name="mailTB" Grid.Row="5" FontSize="16"></TextBox>-->
 
-        <Button x:Name="ChangeInfo" Grid.Row="6" Margin="5,2,10,2" 
+        <Button x:Name="ChangeInfo" Grid.Row="6"
                 Content="{DynamicResource changeInfo}"
-                HorizontalAlignment="Center" Width="190" Click="ChangeInfo_Click"></Button>
+                HorizontalAlignment="Center" Width="200" Height="50"
+                FontSize="18"
+                Background="#FFBEE600"
+                Click="ChangeInfo_Click"></Button>
     </Grid>
 </Page>

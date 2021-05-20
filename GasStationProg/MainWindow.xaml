@@ -12,7 +12,7 @@
             F:\OOP\GasStationProg_1\GasStationProg_1\Pist.cur
         </Cursor>
     </Window.Resources>
-    <Grid Background="DarkGray">
+    <Grid Background="#FFB4B4B4">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="4*"></ColumnDefinition>
@@ -83,7 +83,7 @@
 
             <Button x:Name="enterButton" BorderThickness="0"
                     Click="enterButton_Click"  
-                    Grid.Column="1" Grid.Row="1" Height="Auto">
+                    Grid.Column="1" Grid.Row="1" Height="Auto" Background="#FFBEE600">
                 <Label Content="{DynamicResource enter}" HorizontalAlignment="Center"
                        VerticalAlignment="Top" FontSize="16" Margin="0"></Label>
             </Button>
@@ -106,8 +106,9 @@
         <Button x:Name="setButton" Click="setButton_Click" 
                 Grid.Column="1" Grid.Row="5" 
                 VerticalAlignment="Bottom"
-                HorizontalAlignment="Right"
-                Height="auto" Margin="7">
+                HorizontalAlignment="Center"
+                Height="auto" Margin="7"
+                Background="#FFBEE600">
             <Image Source="F:\ООП курсач\GasStationProg\settings.png"/>
         </Button>
     </Grid>

@@ -59,5 +59,13 @@ namespace GasStationProg
         {
             AdminWinFrame.Content = new AdminHistPage();
         }
+
+        private void exitButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow MW = new MainWindow();
+            MW.Show();
+
+            this.Close();
+        }
     }
 }

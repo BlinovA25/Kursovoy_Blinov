@@ -15,7 +15,7 @@
                     <Condition Property="IsMouseOver" Value="True"></Condition>
                 </MultiTrigger.Conditions>
                 <MultiTrigger.Setters>
-                    <Setter Property="Foreground" Value="Orange"/>
+                    <Setter Property="Foreground" Value="#FFBEE600"/>
                 </MultiTrigger.Setters>
             </MultiTrigger>
         </Style.Triggers>
@@ -27,13 +27,13 @@
     </Style>
 
     <Style TargetType="Button" x:Key="menuButtons">
-        <Setter Property="Background" Value="Orange"/>
+        <Setter Property="Background" Value="#FFBEE600"/>
         <Setter Property="FontSize" Value="18"/>
         <Setter Property="Margin" Value="10, 0, 10, 10"/>
     </Style>
 
     <Style TargetType="Button" x:Key="AdminHelpButtons">
-        <Setter Property="Background" Value="Orange"/>
+        <Setter Property="Background" Value="#FFBEE600"/>
         <Setter Property="FontSize" Value="14"/>
     </Style>
 

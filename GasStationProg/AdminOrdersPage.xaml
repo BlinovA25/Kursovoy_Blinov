@@ -9,13 +9,53 @@
       Title="AdminOrdersPage">
 
     <Grid  Background="Lavender">
+        
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="11*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid Grid.Column="0" Background="Gray">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="24*"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Content="{DynamicResource namesearch}" FontSize="20" FontWeight="DemiBold"></Label>
+
+                <Grid Grid.Row="1">
+                    <TextBox x:Name="textBoxName" FontSize="20" Margin="5"></TextBox>
+                </Grid>
+
+                <!--<Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBox x:Name="FirPrice" Grid.Column="0" FontSize="20" Margin="5,5,5,20" Cursor="{StaticResource UserCursor}"></TextBox>
+                    <TextBox x:Name="SecPrice" Grid.Column="1" FontSize="20" Margin="5,5,5,20" Cursor="{StaticResource UserCursor}"></TextBox>
+                </Grid>-->
+
+                <Grid Grid.Row="2">
+                    <Button x:Name="SearchBut" Width="150" Height="40" Click="SearchBut_Click"
+                            VerticalAlignment="Top" Margin="10" Background="#FFBEE600">
+                        <Label Content="{DynamicResource search}" FontSize="14"></Label>
+                    </Button>
+                </Grid>
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Column="1">
         <Grid.RowDefinitions>
             <RowDefinition Height="20*"></RowDefinition>
             <RowDefinition Height="2*"></RowDefinition>
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" Margin="10, 10, 10, 0">
-            <DataGrid x:Name="orderGrid" IsReadOnly="False" AutoGenerateColumns="False" FontSize="15" Margin="5,5,5,5">
+            <DataGrid x:Name="orderGrid" IsReadOnly="True" AutoGenerateColumns="False" FontSize="15" Margin="5,5,5,5">
                 <DataGrid.Columns>
                     <!--<DataGridTextColumn Binding="{Binding idOrder}" Header="{DynamicResource idOrder}" Width="50"/>-->
                     <DataGridTextColumn Binding="{Binding UserName}" Header="{DynamicResource username}" Width="165"/>
@@ -42,6 +82,7 @@
 
                 <Button x:Name="saveButton" Content="Готов"
                         Click="saveButton_Click" Margin="0, 5, 10, 5"
+                        Background="#FFBEE600"
                         Height="auto" Width="130" FontSize="18"/>
 
 
@@ -51,5 +92,7 @@
 
             </StackPanel>
         </Grid>
+    </Grid>
+    
     </Grid>
 </Page>

@@ -28,8 +28,9 @@
             <StackPanel HorizontalAlignment="Center"  Grid.Row="1" 
                         Orientation="Horizontal">
 
-                <Button x:Name="chooseButton" Content="Выбрать топливо" 
+                <Button x:Name="chooseButton" Content="{DynamicResource chooseFuel}" 
                         Click="chooseButton_Click" Margin="0, 5, 10, 5"
+                        Background="#FFBEE600"
                         Height="auto" Width="200" FontSize="18"/>
 
             </StackPanel>

@@ -12,7 +12,7 @@
     <v:String x:Key="registr">РЕГИСТРАЦИЯ</v:String>
     <!-- окна и страницы администратора и клиента -->
     <v:String x:Key="fuelButton">Топливо</v:String>
-    <v:String x:Key="shopButton">Магазин</v:String>
+    <v:String x:Key="hist">История заказов</v:String>
     <v:String x:Key="ordersButton">Заказы</v:String>
     <v:String x:Key="refresh">Обновить</v:String>
     <v:String x:Key="delete">Удалить</v:String>
@@ -21,7 +21,6 @@
     <v:String x:Key="ID">ID</v:String>
     <v:String x:Key="name">Наименование</v:String>
     <v:String x:Key="price">Цена</v:String>
-    <v:String x:Key="photo">Фото</v:String>
     <v:String x:Key="reviews">Отзывы</v:String>
     <v:String x:Key="save">Сохранить</v:String>
     <!-- страницы отзывов -->
@@ -42,15 +41,24 @@
     <!-- Выбор количества литров -->
     <v:String x:Key="EnterQuant">Введите необходимое количество литров:</v:String>
     <v:String x:Key="FuelIsChosen">Топливо выбрано</v:String>
-    <v:String x:Key="L">Л</v:String>
+    <v:String x:Key="L">л</v:String>
     <v:String x:Key="ok">OK</v:String>
     <v:String x:Key="cancel">Отмена</v:String>
     <!-- Изменение личной информации -->
-    <v:String x:Key="changeInfo">Изменить информацию</v:String>
+    <v:String x:Key="changeInfo">Изменить</v:String>
     <!-- Отправка писем -->
     <v:String x:Key="to">Получатель:</v:String>
     <v:String x:Key="mailtext">Текст письма:</v:String>
+    <v:String x:Key="send">Отправить</v:String>
+    <!-- Поиск -->
+    <v:String x:Key="namesearch">Имя пользователя:</v:String>
+    <v:String x:Key="search">Поиск</v:String>
+    <!-- Страница fuel у пользователей -->
+    <v:String x:Key="chooseFuel">Оформить заказ</v:String>
     
+    
+
+
     <!--<v:String x:Key="menu">Главное меню</v:String>
     <v:String x:Key="ShowItems">Топливо</v:String>
     <v:String x:Key="ShowShopItems">Товары</v:String>

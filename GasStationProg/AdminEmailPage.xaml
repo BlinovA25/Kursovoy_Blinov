@@ -5,15 +5,15 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GasStationProg"
       mc:Ignorable="d" 
-      Height="220" Width="250"
+      Height="240" Width="200"
       Title="AdminEmailPage">
 
-    <Grid Background="White">
+    <Grid Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"></RowDefinition>
             <RowDefinition Height="2*"></RowDefinition>
-            <RowDefinition Height="4*"></RowDefinition>
-            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="3.6*"></RowDefinition>
+            <RowDefinition Height="3.4*"></RowDefinition>
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
@@ -22,15 +22,18 @@
                 <ColumnDefinition Width="2*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             
-            <Label Content="{DynamicResource to}" Grid.Column="0" FontSize="20"></Label>
-            <TextBox x:Name="toTB" Grid.Column="1" Margin="2" FontSize="16" MaxLength="10"></TextBox>
+            <Label Content="{DynamicResource to}" Grid.Column="0" FontSize="16"></Label>
+            <ComboBox Grid.Column="1" Margin="5,2" FontSize="16" x:Name="Users" SelectionChanged="Users_SelectionChanged"></ComboBox>
         </Grid>
         
-        <Label Content="{DynamicResource mailtext}" Grid.Row="1" FontSize="20"></Label>
-        <TextBox x:Name="mailtextTB" Grid.Row="3" Margin="5" FontSize="16" MaxLength="5"></TextBox>
+        <Label Content="{DynamicResource mailtext}" Grid.Row="1" FontSize="16"></Label>
+        <TextBox x:Name="mailtextTB" Grid.Row="2" Margin="5" FontSize="16" MaxLength="200"></TextBox>
 
-        <Button x:Name="sendMail" Grid.Row="4" Width="220" Height="40"
-                Content="{DynamicResource changeInfo}" FontSize="16"
-                HorizontalAlignment="Center" VerticalAlignment="Center" Click="sendMail_Click"></Button>
+        <Button x:Name="sendMail" Grid.Row="4" 
+                Width="200" Height="50"
+                Background="#FFBEE600"
+                Content="{DynamicResource send}" FontSize="16"
+                HorizontalAlignment="Center" VerticalAlignment="Center" 
+                Click="sendMail_Click"></Button>
     </Grid>
 </Page>

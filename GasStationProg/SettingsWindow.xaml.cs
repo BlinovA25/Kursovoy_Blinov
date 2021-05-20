@@ -40,13 +40,18 @@ namespace GasStationProg
         private void UserWindowButton_Click(object sender, RoutedEventArgs e)
         {
             UserWindow UW = new UserWindow();
-            UW.ShowDialog();
+            UW.Show();
         }
 
         private void AdminWindowButton_Click(object sender, RoutedEventArgs e)
         {
             AdminWindow AW = new AdminWindow();
-            AW.ShowDialog();
+            AW.Show();
+        }
+
+        private void okButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

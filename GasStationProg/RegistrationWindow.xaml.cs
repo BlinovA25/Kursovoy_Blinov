@@ -31,10 +31,10 @@ namespace GasStationProg
         {
             db = new UserContext();
 
-            if (loginTB.Text == "Admin" && passTB.Text == "00000")
+            if (loginTB.Text == "Admin" && passTB.Password == "00000")
             {
                 newUser.UserName = loginTB.Text;
-                newUser.UserPass = passTB.Text;
+                newUser.UserPass = MainWindow.GetHash(passTB.Password);
                 try
                 {
                     db.Database.ExecuteSqlCommand($@"insert into USERS values('{newUser.UserName}', '{newUser.UserPass}', ' ', 1, getdate());");
@@ -50,22 +50,28 @@ namespace GasStationProg
                 {
                     newUser.UserName = loginTB.Text;
 
-                    if (passTB.Text.Length == 5)
+                    if (passTB.Password.Length == 5)
                     {
-                        newUser.UserPass = passTB.Text;
-                        newUser.Email = mailTB.Text;
+                        newUser.UserPass = MainWindow.GetHash(passTB.Password);
 
-                        try
+                        if (mailTB.Text.Length > 5 || mailTB.Text.Contains("@") || mailTB.Text.Contains("."))
                         {
-                            db.Database.ExecuteSqlCommand($@"insert into USERS values('{newUser.UserName}', '{newUser.UserPass}', '{newUser.Email}', 0, getdate());");
-                            MessageBox.Show($"Пользователь {newUser.UserName} зарегистрирован.");
-                            this.DialogResult = false;
+                            newUser.Email = mailTB.Text;
+
+                            try
+                            {
+                                db.Database.ExecuteSqlCommand($@"insert into USERS values('{newUser.UserName}', '{newUser.UserPass}', '{newUser.Email}', 0, getdate());");
+                                MessageBox.Show($"Пользователь {newUser.UserName} зарегистрирован.");
+                                this.DialogResult = false;
+                            }
+                            catch
+                            { MessageBox.Show($"Пользователь {newUser.UserName} не зарегистрирован, скорее всего это имя уже занято, попробуйте другое."); }
                         }
-                        catch
-                        { MessageBox.Show($"Пользователь {newUser.UserName} не зарегистрирован, скорее всего это имя уже занято, попробуйте другое."); }
+                        else 
+                        { MessageBox.Show($"Почта введена неправильно."); }
                     }
                     else
-                    { MessageBox.Show($"Пароль должен содержать ровно 5 символов."); }
+                    {  }
                 }
                 else
                 { MessageBox.Show($"Логин должен содержать от 2 до 10 символов."); }

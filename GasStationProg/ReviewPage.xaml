@@ -7,6 +7,11 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ReviewPage">
+    <Page.Resources>
+        <Cursor x:Key="UserCursor">
+            F:\OOP\GasStationProg_1\GasStationProg_1\Pist.cur
+        </Cursor>
+    </Page.Resources>
 
     <Grid  Background="Lavender">
         <Grid.RowDefinitions>
@@ -30,9 +35,10 @@
             </Grid.ColumnDefinitions>
 
             <TextBox x:Name="reviewTB" Grid.Column="0" Margin="15,2,5,2" FontSize="20"
-                     VerticalAlignment="Center"></TextBox>
+                     VerticalAlignment="Center"  Cursor="{StaticResource UserCursor}"
+                     Background="#FFB4B4B4"></TextBox>
             <Button Grid.Column="1" Margin="5,0" Content="->" FontSize="20"
-                    VerticalAlignment="Center" Click="Button_Click">
+                    VerticalAlignment="Center" Click="Button_Click" Background="#FFBEE600">
             </Button>
         </Grid>
 

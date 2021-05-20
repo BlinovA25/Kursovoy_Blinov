@@ -52,18 +52,24 @@ namespace GasStationProg
         private void OrderReady_Click(object sender, RoutedEventArgs e)
         {
             db = new OrderContext();
+            if (Convert.ToInt32(QuantityTB.Text) <= 100 && Convert.ToInt32(QuantityTB.Text) >= 10)
+            {
+                try
+                {
+                    Q = Convert.ToInt32(QuantityTB.Text);
+                }
+                catch
+                { }
+                Sum = Q * P;
 
-            try
-            { Q = Convert.ToInt32(QuantityTB.Text); }
-            catch 
-            { }
-            Sum = Q * P;
+                UserName = UN;
 
-            UserName = UN;
-           
-            db.Database.ExecuteSqlCommand($@"insert into ORDERS values('{UN}', '{FuelName}', {Q}, {Sum}, 0, getdate(), '');");
-            //MessageBox.Show($"Пользователь {UN} зарегистрирован.");
-            this.DialogResult = false;
+                db.Database.ExecuteSqlCommand($@"insert into ORDERS values('{UN}', '{FuelName}', {Q}, {Sum}, 0, getdate(), '');");
+                //MessageBox.Show($"Пользователь {UN} зарегистрирован.");
+                this.DialogResult = false;
+            }
+            else
+            { QuantityTB.Text = "от 10 до 100"; }
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)

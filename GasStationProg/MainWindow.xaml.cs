@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -46,6 +47,7 @@ namespace GasStationProg
 
             string login = loginTB.Text.Trim();
             string pass = passwordTB.Password.Trim(); //Text.Trim();
+            pass = GetHash(pass);
 
             if (pass.Length < 1)
             {
@@ -58,6 +60,8 @@ namespace GasStationProg
 
                 DB = new UserContext();
                 USERS authUser = null;
+
+
                 authUser = DB.Users.Where(u => u.UserName == login && u.UserPass == pass).FirstOrDefault();
                 
                 //скрывается и новое окно тоже
@@ -69,9 +73,8 @@ namespace GasStationProg
                     if (authUser.adm == true)
                     {
                         AdminWindow AW = new AdminWindow();
-                        AW.ShowDialog();
-                        
-                        //this.Close();
+                        AW.Show();
+                        this.Close();
                     }
                     else
                     {
@@ -79,9 +82,8 @@ namespace GasStationProg
                         //mainWindow = new MainMainWindow();
                         UW.UN = login;
                         //UW.UID = authUser.UserName;
-                        UW.ShowDialog();
-
-                        //this.Close();//
+                        UW.Show();
+                        this.Close();
                     }
                    
                 }
@@ -93,6 +95,15 @@ namespace GasStationProg
 
             } 
         }
+
+        public static string GetHash(string password) 
+        {
+            using (var hash = SHA1.Create())
+            {
+                return string.Concat(hash.ComputeHash(Encoding.UTF8.GetBytes(password)).Select(x => x.ToString("X2")));
+            }
+        }
+
 
         private void Hyperlink_Click(object sender, RoutedEventArgs e)
         {

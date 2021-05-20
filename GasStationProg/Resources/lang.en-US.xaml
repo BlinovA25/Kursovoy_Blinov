@@ -12,7 +12,7 @@
     <v:String x:Key="registr">REGISTRATION</v:String>
     <!-- окна и страницы администратора и клиента -->
     <v:String x:Key="fuelButton">Fuel</v:String>
-    <v:String x:Key="shopButton">Shop</v:String>
+    <v:String x:Key="hist">Purchase history</v:String>
     <v:String x:Key="ordersButton">Orders</v:String>
     <v:String x:Key="refresh">Refresh</v:String>
     <v:String x:Key="delete">Delete</v:String>
@@ -21,8 +21,41 @@
     <v:String x:Key="ID">ID</v:String>
     <v:String x:Key="name">Name</v:String>
     <v:String x:Key="price">Price</v:String>
-    <v:String x:Key="photo">Photo</v:String>
-    
-    
+    <v:String x:Key="reviews">Reviews</v:String>
+    <v:String x:Key="save">Save</v:String>
+    <!-- страницы отзывов -->
+    <v:String x:Key="user">User</v:String>
+    <v:String x:Key="review">Review</v:String>
+    <!-- страницы отзывов -->
+    <v:String x:Key="username">User name</v:String>
+    <v:String x:Key="email">E-mail</v:String>
+    <!-- страница заказов -->
+    <v:String x:Key="idOrder">№</v:String>
+    <v:String x:Key="idFuel">Fuel</v:String>
+    <v:String x:Key="idUser">ID user</v:String>
+    <v:String x:Key="OrderDate">Order date</v:String>
+    <v:String x:Key="OrderSum">Sum</v:String>
+    <v:String x:Key="Status">Status</v:String>
+    <v:String x:Key="quantity">Quantity</v:String>
+    <v:String x:Key="ComplDate">Complition Date</v:String>
+    <!-- Выбор количества литров -->
+    <v:String x:Key="EnterQuant">Enter needed quantity of fuel:</v:String>
+    <v:String x:Key="FuelIsChosen">Fuel was chosen</v:String>
+    <v:String x:Key="L">l</v:String>
+    <v:String x:Key="ok">OK</v:String>
+    <v:String x:Key="cancel">Cancel</v:String>
+    <!-- Изменение личной информации -->
+    <v:String x:Key="changeInfo">Change</v:String>
+    <!-- Отправка писем -->
+    <v:String x:Key="to">Получатель:</v:String>
+    <v:String x:Key="mailtext">Текст письма:</v:String>
+    <v:String x:Key="send">Отправить</v:String>
+    <!-- Поиск -->
+    <v:String x:Key="namesearch">Name of user:</v:String>
+    <v:String x:Key="search">Search</v:String>
+    <!-- Страница fuel у пользователей -->
+    <v:String x:Key="chooseFuel">Choose fuel</v:String>
+
+
 
 </ResourceDictionary>

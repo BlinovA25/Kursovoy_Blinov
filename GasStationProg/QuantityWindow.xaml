@@ -8,6 +8,11 @@
         Title="QuantityWindow" Height="300" Width="250"
         AllowsTransparency="True" Background="Transparent" WindowStyle="None"
         ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Cursor x:Key="UserCursor">
+            F:\OOP\GasStationProg_1\GasStationProg_1\Pist.cur
+        </Cursor>
+    </Window.Resources>
     <Grid>
         <Border Width="auto" Height="auto" BorderBrush="Black" 
                 BorderThickness="3" CornerRadius="20" Background="DarkGray">
@@ -40,7 +45,8 @@
                     <Label x:Name="FuelTypeLabel" Grid.Column="0" Content="" FontSize="20"></Label>
                     <TextBox x:Name="QuantityTB" Grid.Column="1" 
                              PreviewTextInput="QuantityTB_PreviewTextInput" 
-                             Margin="2" FontSize="18"></TextBox>
+                             Margin="2" FontSize="18"
+                              Cursor="{StaticResource UserCursor}"></TextBox>
                     <Label Grid.Column="2" Content="{DynamicResource L}" FontSize="20"></Label>
                 </Grid>
                 
@@ -51,16 +57,16 @@
                         <ColumnDefinition Width="2*"></ColumnDefinition>
                         <ColumnDefinition Width="2*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Border Grid.Column="0" CornerRadius="10" Margin="10" Background="Orange"
-                            BorderBrush="Black" BorderThickness="1">
+                    <Border Grid.Column="0" CornerRadius="10" Margin="10" Background="#FFBEE600"
+                            BorderBrush="Black" BorderThickness="2">
                         <Button x:Name="OrderReady" Click="OrderReady_Click" 
                                 Background="Transparent" BorderThickness="0">
                             <TextBlock Text="{DynamicResource ok}"></TextBlock>
                         </Button>
                     </Border>
 
-                    <Border Grid.Column="1" CornerRadius="10" Margin="10" Background="Orange" 
-                            BorderBrush="Black" BorderThickness="1">
+                    <Border Grid.Column="1" CornerRadius="10" Margin="10" Background="#FFBEE600"
+                            BorderBrush="Black" BorderThickness="2">
                         <Button x:Name="Cancel" Click="Cancel_Click" Background="Transparent" BorderThickness="0">
                             <TextBlock Text="{DynamicResource cancel}"></TextBlock>
                         </Button>
