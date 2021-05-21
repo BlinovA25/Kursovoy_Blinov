@@ -50,7 +50,7 @@ namespace GasStationProg
 
             if (passTB.Password.Length == 5)
             {
-                newUser.UserPass = passTB.Password;
+                newUser.UserPass = MainWindow.GetHash(passTB.Password);
                 try
                 {
                     db.Database.ExecuteSqlCommand($@"update USERS set UserPass = '{newUser.UserPass}' where UserName = '{ChUserName}';");
@@ -71,29 +71,6 @@ namespace GasStationProg
                 catch
                 { MessageBox.Show($"Почта не обновлена."); }
             }
-
-
-
-            //if (loginTB.Text.Length > 2)
-            //{
-            //    newUser.UserName = loginTB.Text;
-            //    if (passTB.Text.Length == 5)
-            //    {
-            //        newUser.UserPass = passTB.Text;
-            //        newUser.Email = mailTB.Text;
-            //        try
-            //        {
-            //            db.Database.ExecuteSqlCommand($@"update USERS set UserName = '{newUser.UserName}', UserPass = '{newUser.UserPass}', Email = '{newUser.Email}' where UserName = '{ChUserName}';");
-            //            MessageBox.Show($"Информация успешно изменена.");
-            //        }
-            //        catch
-            //        { MessageBox.Show($"Нельзя использовать имя {newUser.UserName}, так как оно уже занято."); }
-            //    }
-            //    else
-            //    { MessageBox.Show($"Пароль должен содержать ровно 5 символов."); }
-            //}
-            //else
-            //{ MessageBox.Show($"Логин должен содержать от 2 до 10 символов."); }
         }
     }
 }

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="UserWindow" Height="700" Width="1200" 
         ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid Background="Gray">
+    <Grid Background="#FFB4B4B4">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"></ColumnDefinition>
             <ColumnDefinition Width="8*"></ColumnDefinition>

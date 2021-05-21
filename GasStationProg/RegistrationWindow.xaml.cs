@@ -71,10 +71,10 @@ namespace GasStationProg
                         { MessageBox.Show($"Почта введена неправильно."); }
                     }
                     else
-                    {  }
+                    { MessageBox.Show($"Пароль должен содержать ровно 5 символов."); }
                 }
                 else
-                { MessageBox.Show($"Логин должен содержать от 2 до 10 символов."); }
+                { MessageBox.Show($"Логин должен содержать от 3 до 10 символов."); }
 
             }
 

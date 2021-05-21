@@ -28,16 +28,6 @@
                     <TextBox x:Name="textBoxName" FontSize="20" Margin="5"></TextBox>
                 </Grid>
 
-                <!--<Grid Grid.Row="4">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*"></ColumnDefinition>
-                        <ColumnDefinition Width="1*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-
-                    <TextBox x:Name="FirPrice" Grid.Column="0" FontSize="20" Margin="5,5,5,20" Cursor="{StaticResource UserCursor}"></TextBox>
-                    <TextBox x:Name="SecPrice" Grid.Column="1" FontSize="20" Margin="5,5,5,20" Cursor="{StaticResource UserCursor}"></TextBox>
-                </Grid>-->
-
                 <Grid Grid.Row="2">
                     <Button x:Name="SearchBut" Width="150" Height="40" Click="SearchBut_Click"
                             VerticalAlignment="Top" Margin="10" Background="#FFBEE600">
@@ -56,41 +46,28 @@
 
         <Grid Grid.Row="0" Margin="10, 10, 10, 0">
             <DataGrid x:Name="orderGrid" IsReadOnly="True" AutoGenerateColumns="False" FontSize="15" Margin="5,5,5,5">
-                <DataGrid.Columns>
-                    <!--<DataGridTextColumn Binding="{Binding idOrder}" Header="{DynamicResource idOrder}" Width="50"/>-->
-                    <DataGridTextColumn Binding="{Binding UserName}" Header="{DynamicResource username}" Width="165"/>
-                    <DataGridTextColumn Binding="{Binding ArrTime}" Header="{DynamicResource OrderDate}" Width="190"/>
-                    <DataGridTextColumn Binding="{Binding FuelName}" Header="{DynamicResource idFuel}" Width="95"/>
-                    <DataGridTextColumn Binding="{Binding Quantity}" Header="{DynamicResource quantity}" Width="115"/>
-                    <DataGridTextColumn Binding="{Binding OrderSum}" Header="{DynamicResource OrderSum}" Width="80"/>
-                    <!--<DataGridTextColumn Binding="{Binding ComplDate}" Header="{DynamicResource ComplDate}" Width="125"/>-->
-                    <DataGridTextColumn Binding="{Binding OrderStatus}" Header="{DynamicResource Status}" Width="80"/>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding UserName}" Header="{DynamicResource username}" Width="165"/>
+                        <DataGridTextColumn Binding="{Binding ArrTime}" Header="{DynamicResource OrderDate}" Width="190"/>
+                        <DataGridTextColumn Binding="{Binding FuelName}" Header="{DynamicResource idFuel}" Width="95"/>
+                        <DataGridTextColumn Binding="{Binding Quantity}" Header="{DynamicResource quantity}" Width="115"/>
+                        <DataGridTextColumn Binding="{Binding OrderSum}" Header="{DynamicResource OrderSum}" Width="80"/>
+                        <DataGridTextColumn Binding="{Binding OrderStatus}" Header="{DynamicResource Status}" Width="80"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
 
         <Grid Grid.Row="1">
-            <StackPanel HorizontalAlignment="Center"  Grid.Row="1" 
+                <StackPanel HorizontalAlignment="Center"  Grid.Row="1" 
                         Orientation="Horizontal">
 
-                <!--<Button x:Name="updateButton" Content="{DynamicResource refresh}" 
-                        Click="updateButton_Click" Margin="0, 5, 10, 5"
-                        Height="auto" Width="130" FontSize="18"/>
-                
-                Click="downloadButton_Click"-->
 
-
-                <Button x:Name="saveButton" Content="Готов"
+                    <Button x:Name="saveButton" Content="Готов"
                         Click="saveButton_Click" Margin="0, 5, 10, 5"
                         Background="#FFBEE600"
                         Height="auto" Width="130" FontSize="18"/>
 
-
-                <!--<Button x:Name="downloadButton" Content="{DynamicResource download}"
-                         Margin="0, 5, 10, 5"
-                        Height="auto" Width="130" FontSize="18"/>-->
-
-            </StackPanel>
+                </StackPanel>
         </Grid>
     </Grid>
     

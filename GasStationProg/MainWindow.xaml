@@ -25,9 +25,6 @@
             <RowDefinition Height="3*"></RowDefinition>
             <RowDefinition Height="1.5*"></RowDefinition>
             <RowDefinition Height="1.5*"></RowDefinition>
-            <!--<RowDefinition Height="2*"></RowDefinition>
-            <RowDefinition Height="2*"></RowDefinition>-->
-               
         </Grid.RowDefinitions>
 
         <TextBlock Height="auto" Grid.Column="1"
@@ -56,11 +53,6 @@
             </Grid.RowDefinitions>
             <Label Content="{DynamicResource password}" VerticalAlignment="Center" 
                    FontSize="18" Grid.Row="0"/>
-            <!--<TextBox x:Name="passwordTB" Grid.Row="1" 
-                     Margin="5,0,5,5" FontSize="17"
-                     Cursor="{StaticResource UserCursor}" 
-                     PasswordBox.PasswordChanged="passwordTB_PasswordChanged" 
-                     />-->
             <PasswordBox x:Name="passwordTB" Grid.Row="1" 
                      Margin="5,0,5,5" FontSize="17" MaxLength="5"
                      Cursor="{StaticResource UserCursor}"></PasswordBox>

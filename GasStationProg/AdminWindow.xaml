@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="AdminWindow" Height="700" Width="1400" 
         ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid Background="Gray">
+    <Grid Background="#FFB4B4B4">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2.5*"></ColumnDefinition>
             <ColumnDefinition Width="11.5*"></ColumnDefinition>

@@ -52,7 +52,7 @@
             <Grid Grid.Row="8">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*"></ColumnDefinition>
-                    <ColumnDefinition Width="10*"></ColumnDefinition>
+                    <ColumnDefinition Width="14*"></ColumnDefinition>
                     <ColumnDefinition Width="2*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 

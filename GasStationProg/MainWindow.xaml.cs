@@ -52,24 +52,18 @@ namespace GasStationProg
             if (pass.Length < 1)
             {
                 //passwordTB.ToolTip = "Неверный пароль";
-                passwordTB.Background = Brushes.DarkRed;
+                //passwordTB.Background = Brushes.DarkRed;
             }
             else
             {
-                passwordTB.Background = Brushes.Transparent;
+                //passwordTB.Background = Brushes.Transparent;
 
                 DB = new UserContext();
                 USERS authUser = null;
-
-
                 authUser = DB.Users.Where(u => u.UserName == login && u.UserPass == pass).FirstOrDefault();
-                
-                //скрывается и новое окно тоже
-                //this.WindowState = WindowState.Minimized;
                 
                 if (authUser != null)
                 {
-                    //this.DialogResult = true;
                     if (authUser.adm == true)
                     {
                         AdminWindow AW = new AdminWindow();
@@ -78,10 +72,8 @@ namespace GasStationProg
                     }
                     else
                     {
-                        UserWindow UW = new UserWindow();// 
-                        //mainWindow = new MainMainWindow();
+                        UserWindow UW = new UserWindow();
                         UW.UN = login;
-                        //UW.UID = authUser.UserName;
                         UW.Show();
                         this.Close();
                     }
@@ -89,7 +81,6 @@ namespace GasStationProg
                 }
                 else
                 {
-                    //this.DialogResult = false;
                     MessageBox.Show("Такого пользователя не существует!"); 
                 }
 

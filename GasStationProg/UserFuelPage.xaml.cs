@@ -60,6 +60,7 @@ namespace GasStationProg
                 Fdb.fuels.Load(); // загружаем данные //возникает ошибка!!!
                 fuelGrid.ItemsSource = Fdb.fuels.Local.ToBindingList();
 
+                fuelGrid.SelectedIndex = 0;
                 //db.Dispose();
             }
             catch
@@ -94,7 +95,9 @@ namespace GasStationProg
 
         private void chooseButton_Click(object sender, RoutedEventArgs e)
         {
-            if (fuelGrid.SelectedItems.Count > 0)
+            
+            
+            if (fuelGrid.SelectedItems.Count != 0)
             {
                 for (int i = 0; i < fuelGrid.SelectedItems.Count; i++)
                 {
@@ -106,6 +109,7 @@ namespace GasStationProg
                     }
                 }
             }
+            
             QuantityWindow QW = new QuantityWindow(FN, Price, UserName);
             QW.ShowDialog();
         }

@@ -55,23 +55,5 @@
     <v:String x:Key="search">Поиск</v:String>
     <!-- Страница fuel у пользователей -->
     <v:String x:Key="chooseFuel">Оформить заказ</v:String>
-    
-    
-
-
-    <!--<v:String x:Key="menu">Главное меню</v:String>
-    <v:String x:Key="ShowItems">Топливо</v:String>
-    <v:String x:Key="ShowShopItems">Товары</v:String>
-    <v:String x:Key="AddItem">Добавить товар</v:String>
-    <v:String x:Key="AddFuel">Добавить топливо</v:String>
-    <v:String x:Key="Name">Наименование:</v:String>
-    <v:String x:Key="Cost">Цена:</v:String>
-    <v:String x:Key="Description">Описанние:</v:String>
-    <v:String x:Key="ChoosePhoto">Выбрать фото</v:String>
-    <v:String x:Key="DarkTheme">Тёмная тема</v:String>
-    <v:String x:Key="LightTheme">Светлая тема</v:String>
-    <v:String x:Key="ItemPic">Изображение</v:String>
-    <v:String x:Key="Search">Поиск:</v:String>
-    <v:String x:Key="ShopCost">Диапазон цен:</v:String>-->
 
 </ResourceDictionary>

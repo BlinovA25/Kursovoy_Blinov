@@ -37,8 +37,9 @@
             <TextBox x:Name="reviewTB" Grid.Column="0" Margin="15,2,5,2" FontSize="20"
                      VerticalAlignment="Center"  Cursor="{StaticResource UserCursor}"
                      Background="#FFB4B4B4"></TextBox>
-            <Button Grid.Column="1" Margin="5,0" Content="->" FontSize="20"
+            <Button Grid.Column="1" Margin="5,0"
                     VerticalAlignment="Center" Click="Button_Click" Background="#FFBEE600">
+                <Image Source="F:\ООП курсач\GasStationProg\arrow3.png"/>
             </Button>
         </Grid>
 
